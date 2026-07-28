@@ -1,93 +1,135 @@
 ---
 layout: default
 title:
-description: 장비 제어부터 항만 자동화 백엔드까지, 현장에서 해결한 문제와 설계 판단을 기록합니다.
+description: KevinPark의 항만 자동화, 장비 제어 소프트웨어 개발 경력과 프로젝트를 정리한 페이지입니다.
 ---
-<section class="hero">
-  <div class="shell hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow">장비 제어 · 항만 자동화 · 백엔드</p>
-      <h1>현장을 이해하고,<br><em>시스템으로 해결합니다.</em></h1>
-      <p class="hero-lead">
-        장비와 PLC를 직접 연결하던 제어 개발에서 시작해
-        현재는 TOS와 크레인 제어 시스템을 연결하는 항만 자동화 실행 시스템을 유지보수하고,
-        ECS·STS 장비 에뮬레이터를 설계·개발하고 있습니다.
-        물리 장비의 동작과 소프트웨어의 상태를 함께 이해하는 개발자 KevinPark입니다.
-      </p>
-      <div class="hero-actions">
-        <a class="button button-primary" href="{{ '/projects/' | relative_url }}">경력과 프로젝트</a>
-        <a class="button button-secondary" href="{{ '/archive/' | relative_url }}">기술 기록 읽기</a>
-      </div>
-    </div>
+<section class="home-intro shell">
+  <p class="eyebrow">개발 경력</p>
+  <h1>KevinPark</h1>
+  <p class="home-role">항만 자동화 · 장비 제어 소프트웨어 개발</p>
+  <p class="home-description">
+    TOS와 장비 제어 시스템 사이의 작업 실행 모듈, 항만 장비 에뮬레이터,
+    C# 기반 PC 제어 프로그램과 Beckhoff PLC 연동 프로그램을 개발했습니다.
+  </p>
 
-    <aside class="focus-card" aria-label="주요 역량">
-      <p class="focus-label">지금까지 이어 온 역량</p>
-      <ol>
-        <li><span>01</span><strong>현장 문제 해결</strong><small>장비 셋업과 유지보수에서 원인을 끝까지 추적</small></li>
-        <li><span>02</span><strong>검증 환경 설계</strong><small>실제 장비 없이 작업·장애·연동 흐름을 재현</small></li>
-        <li><span>03</span><strong>장비·시스템 통신</strong><small>비동기 소켓, 시리얼, ADS, PLC 인터페이스 연동</small></li>
-      </ol>
-    </aside>
-  </div>
+  <dl class="fact-strip">
+    <div>
+      <dt>현재</dt>
+      <dd>토탈소프트뱅크 연구소<br>2023.01 - 재직 중</dd>
+    </div>
+    <div>
+      <dt>주요 분야</dt>
+      <dd>항만 자동화<br>장비 제어 및 연동 검증</dd>
+    </div>
+    <div>
+      <dt>주요 기술</dt>
+      <dd>Java · Spring · C#<br>TCP · PLC · Oracle</dd>
+    </div>
+  </dl>
 </section>
 
-<section class="statement">
-  <div class="shell statement-grid">
-    <p class="section-kicker">일하는 방식</p>
-    <p class="statement-copy">
-      화면에서 보이는 기능만 만들지 않습니다.
-      <strong>센서와 장비가 실제로 어떻게 움직이는지, 통신이 끊기면 어떤 상태가 남는지,
-      운영자가 무엇을 보고 복구해야 하는지</strong>까지 함께 생각합니다.
-    </p>
+<section class="section section-tinted">
+  <div class="shell">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">프로젝트</p>
+        <h2>주요 개발</h2>
+      </div>
+      <a href="{{ '/projects/' | relative_url }}">전체 프로젝트</a>
+    </div>
+
+    <div class="project-grid">
+      <a class="project-card" href="{{ '/projects/aytss/' | relative_url }}">
+        <p class="project-type">2025 · 신규 구축</p>
+        <h3>AYTSS</h3>
+        <p class="card-description">대만 항만의 TOS 작업지시를 FMS 실행 단위로 변환하고 자율 야드 이송장비의 작업 진행을 관리하는 시스템입니다.</p>
+        <p class="card-stack">Java · Spring Boot · MyBatis · Oracle · TCP · eventflow</p>
+        <span class="card-link">상세 내용</span>
+      </a>
+
+      <a class="project-card" href="{{ '/projects/atcss/' | relative_url }}">
+        <p class="project-type">2023 - 현재 · 유지보수 및 신규 사이트</p>
+        <h3>ATCSS</h3>
+        <p class="card-description">TOS 작업지시와 야드 크레인 제어 시스템을 연결하는 자동화 실행 모듈입니다. 국내외 운영 사이트와 일본 신규 사이트를 담당했습니다.</p>
+        <p class="card-stack">Java · Spring Framework · eGovFrame · MyBatis · TCP</p>
+        <span class="card-link">상세 내용</span>
+      </a>
+
+      <a class="project-card" href="{{ '/projects/equipment-emulators/' | relative_url }}">
+        <p class="project-type">2024 · 설계 및 개발</p>
+        <h3>ECS·STS 장비 에뮬레이터</h3>
+        <p class="card-description">실제 크레인 없이 작업 명령, 장비 상태, 이동 제약, 오류와 재접속을 검증하는 장비 에뮬레이터와 연동 도구입니다.</p>
+        <p class="card-stack">C# · .NET Framework · WinForms · 비동기 TCP</p>
+        <span class="card-link">상세 내용</span>
+      </a>
+
+      <a class="project-card" href="{{ '/projects/lms-control/' | relative_url }}">
+        <p class="project-type">2019 - 2021 · PC/PLC 제어</p>
+        <h3>LMS 물류 제어</h3>
+        <p class="card-description">LMS 스테이지와 주변 장치를 제어하는 C# 프로그램, Beckhoff 통신 라이브러리와 데모 장비 프로그램을 개발했습니다.</p>
+        <p class="card-stack">C# · WinForms · Beckhoff ST · Socket · CC-Link</p>
+        <span class="card-link">상세 내용</span>
+      </a>
+
+      <a class="project-card" href="{{ '/projects/vision-inspection/' | relative_url }}">
+        <p class="project-type">2020 - 2022 · 머신 비전</p>
+        <h3>비전 정렬 및 검사 프로그램</h3>
+        <p class="card-description">카메라 영상 기반 정렬, 레시피 관리, 검사 결과와 이미지·알람 이력 저장 기능을 개발했습니다.</p>
+        <p class="card-stack">C# · WPF · WinForms · SQLite · GigE · PLC</p>
+        <span class="card-link">상세 내용</span>
+      </a>
+
+      <a class="project-card" href="{{ '/projects/ads-file-manager/' | relative_url }}">
+        <p class="project-type">2021 · 개발</p>
+        <h3>TwinCAT ADS 파일 관리자</h3>
+        <p class="card-description">Beckhoff PLC 상태 로깅, 장비 파라미터 파일 관리와 원격 조회를 위한 상시 실행 프로그램입니다.</p>
+        <p class="card-stack">C# · WPF · TwinCAT ADS · XML · Socket</p>
+        <span class="card-link">상세 내용</span>
+      </a>
+    </div>
   </div>
 </section>
 
 <section class="section shell">
   <div class="section-heading">
     <div>
-      <p class="section-kicker">대표 경험</p>
-      <h2>대표 프로젝트</h2>
+      <p class="section-kicker">경력</p>
+      <h2>근무 이력</h2>
     </div>
-    <a href="{{ '/projects/' | relative_url }}">전체 보기 →</a>
+    <a href="{{ '/about/' | relative_url }}">경력 전체</a>
   </div>
 
-  <div class="project-grid">
-    <article class="project-card project-card-featured">
-      <p class="project-type">2023.01 - 현재 · 항만 자동화</p>
-      <h3>ATCSS 항만 야드 크레인 자동화</h3>
-      <p>국내외 4개 터미널의 운영 시스템을 유지보수하고, 일본 신규 터미널에서는 현장별 기능 개발부터 ECS 에뮬레이터 검증과 롤아웃까지 수행했습니다.</p>
-      <ul class="chip-list"><li>Java</li><li>Spring Framework</li><li>MyBatis</li><li>TCP</li></ul>
-      <a href="{{ '/projects/' | relative_url }}#atcss">경력 자세히 보기 →</a>
+  <div class="career-list">
+    <article class="career-row">
+      <div class="career-period">2023.01 - 현재</div>
+      <div class="career-company">토탈소프트뱅크 연구소</div>
+      <p>항만 자동화 시스템 유지보수, 신규 사이트 개발, 장비 에뮬레이터 및 연동 검증 도구 개발</p>
     </article>
-    <article class="project-card">
-      <p class="project-type">2019.06 - 2020.07 · 물류 장비 제어</p>
-      <h3>LMS 물류 제어</h3>
-      <p>소켓·시리얼·CC-Link 통신을 활용한 C# 제어 프로그램을 개발하고 약 35대의 장비를 개조·셋업했습니다.</p>
-      <ul class="chip-list"><li>C#</li><li>WinForms</li><li>장비 통신</li></ul>
-      <a href="{{ '/projects/' | relative_url }}#lms-control">프로젝트 보기 →</a>
+    <article class="career-row">
+      <div class="career-period">2019.06 - 2022.12</div>
+      <div class="career-company">에이치아이티 제어팀</div>
+      <p>C# 기반 PC 제어, 머신 비전, Beckhoff PLC 제어 라이브러리와 현장 셋업</p>
     </article>
-    <article class="project-card">
-      <p class="project-type">2020.07 - 2021.03 · 머신 비전</p>
-      <h3>비전 정렬 프로그램</h3>
-      <p>GigE 카메라 영상과 정렬 알고리즘을 적용하고 생산 레시피, 결과 데이터, 이미지와 알람 이력을 관리했습니다.</p>
-      <ul class="chip-list"><li>C#</li><li>WPF</li><li>SQLite</li></ul>
-      <a href="{{ '/projects/' | relative_url }}#vision-align">프로젝트 보기 →</a>
+    <article class="career-row">
+      <div class="career-period">2016.09 - 2017.03</div>
+      <div class="career-company">개인 프로젝트</div>
+      <p>전국 약 1만 2천 개 주유소 데이터 기반 웹·앱 개발</p>
     </article>
   </div>
 </section>
 
-<section class="section section-notes">
+<section class="section section-tinted">
   <div class="shell">
     <div class="section-heading">
       <div>
-        <p class="section-kicker">최근 기록</p>
-        <h2>최근 기술 기록</h2>
+        <p class="section-kicker">기술 기록</p>
+        <h2>프로젝트별 구현 내용</h2>
       </div>
-      <a href="{{ '/archive/' | relative_url }}">모든 글 →</a>
+      <a href="{{ '/archive/' | relative_url }}">전체 기록</a>
     </div>
 
     <div class="note-list">
-      {% for post in site.posts limit: 3 %}
+      {% for post in site.posts limit: 4 %}
       <article class="note-row">
         <div class="note-date">{{ post.date | date: "%Y.%m.%d" }}</div>
         <div>
@@ -95,16 +137,9 @@ description: 장비 제어부터 항만 자동화 백엔드까지, 현장에서 
           <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
           <p>{{ post.description }}</p>
         </div>
-        <a class="note-arrow" href="{{ post.url | relative_url }}" aria-label="{{ post.title }} 읽기">↗</a>
+        <a class="note-arrow" href="{{ post.url | relative_url }}" aria-label="{{ post.title }} 보기">보기</a>
       </article>
       {% endfor %}
     </div>
   </div>
-</section>
-
-<section class="cta shell">
-  <p class="section-kicker">경력을 근거로 남기는 공간</p>
-  <h2>해 온 일은<br>기록으로 증명합니다.</h2>
-  <p>현장에서 만난 문제, 선택한 기준, 실행 결과와 배움을 꾸준히 기록해 다음 설계와 다음 기회를 위한 자산으로 만듭니다.</p>
-  <a class="button button-primary" href="{{ '/about/' | relative_url }}">KevinPark 소개</a>
 </section>

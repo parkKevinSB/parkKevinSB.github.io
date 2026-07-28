@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#07111f">
+    <meta name="theme-color" content="#ffffff">
     {% assign page_title = page.title | default: site.title %}
     {% assign page_description = page.description | default: site.description %}
     <title>{% if page.title %}{{ page.title }} · KevinPark{% else %}{{ site.title }}{% endif %}</title>
@@ -24,18 +24,15 @@
     <a class="skip-link" href="#content">본문으로 건너뛰기</a>
     <header class="site-header">
       <div class="shell header-inner">
-        <a class="brand" href="{{ '/' | relative_url }}" aria-label="KevinPark 기술 기록 홈">
-          <span class="brand-mark" aria-hidden="true">KP</span>
-          <span>
-            <strong>KevinPark</strong>
-            <small>기술과 현장의 기록</small>
-          </span>
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="KevinPark 개발 경력 홈">
+          <strong>KevinPark</strong>
+          <small>개발 경력 및 프로젝트</small>
         </a>
         <nav class="site-nav" aria-label="주요 메뉴">
-          <a href="{{ '/archive/' | relative_url }}">기술 글</a>
-          <a href="{{ '/projects/' | relative_url }}">경력과 프로젝트</a>
-          <a href="{{ '/about/' | relative_url }}">소개</a>
-          <a class="nav-github" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a href="{{ '/projects/' | relative_url }}">프로젝트</a>
+          <a href="{{ '/archive/' | relative_url }}">기술 기록</a>
+          <a href="{{ '/about/' | relative_url }}">경력</a>
+          <a class="nav-github" href="https://github.com/{{ site.author.github }}" target="_blank" rel="noreferrer">GitHub</a>
         </nav>
       </div>
     </header>
@@ -46,8 +43,8 @@
 
     <footer class="site-footer">
       <div class="shell footer-inner">
-        <p>현장에서 배운 것을 다음 문제를 위한 기록으로 남깁니다.</p>
-        <p>© {{ 'now' | date: '%Y' }} KevinPark · GitHub Pages</p>
+        <p>항만 자동화 · 장비 제어 · 백엔드</p>
+        <p>© {{ 'now' | date: '%Y' }} KevinPark</p>
       </div>
     </footer>
   </body>

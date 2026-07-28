@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<article class="project-page">
+  <header class="project-hero">
+    <div class="shell">
+      <a class="back-link" href="{{ '/projects/' | relative_url }}">프로젝트 목록</a>
+      <p class="project-period">{{ page.period }}</p>
+      <h1>{{ page.title }}</h1>
+      <p class="project-summary">{{ page.description }}</p>
+      <dl class="project-facts">
+        <div>
+          <dt>구분</dt>
+          <dd>{{ page.category }}</dd>
+        </div>
+        <div>
+          <dt>담당</dt>
+          <dd>{{ page.role }}</dd>
+        </div>
+        <div>
+          <dt>기술</dt>
+          <dd>{{ page.stack }}</dd>
+        </div>
+      </dl>
+    </div>
+  </header>
+
+  <div class="project-content shell">
+    {{ content }}
+  </div>
+</article>

@@ -1,41 +1,79 @@
 ---
-title: 이벤트 기반 워크플로에서 경계를 나누는 기준
-description: 이벤트를 받는 코드와 업무 진행을 판단하는 코드를 분리하며 얻은 설계 기준을 정리합니다.
-tags: [이벤트 기반, 워크플로, 아키텍처]
-reading_time: 6
+title: eventflow 실행 구조
+description: AYTSS에 적용한 Task·Process·Sequence·EventHub 기반 실행 프레임워크의 구성과 동작을 정리합니다.
+tags: [eventflow, Java, 작업 실행]
+reading_time: 5
+date: 2026-07-28 17:20:00 +0900
 ---
 
-이벤트 기반 시스템에서 가장 빨리 커지는 코드는 이벤트 핸들러였다. 처음에는 메시지 하나를 받아 상태를 바꾸는 짧은 코드였지만, 시간이 지나자 유효성 검사, 다음 작업 선택, 외부 호출, 재시도, 완료 보고가 모두 한곳에 모였다.
+## 개발 목적
+
+장시간 실행되는 장비 작업을 메시지 Handler 내부에 직접 구현하지 않고, 실행 단위와 상태 관리 책임을 분리하기 위해 `eventflow`를 개발했습니다.
 
 <!--more-->
 
-문제는 코드 길이보다 **책임의 시간이 서로 달랐다는 점**이었다. 이벤트 수신은 짧고 즉시 끝나야 하지만, 업무 흐름은 외부 응답을 기다리며 오래 지속될 수 있다. 두 책임을 같은 실행 단위에 두면 실패와 재시작의 기준도 섞인다.
+## 핵심 구성
 
-## 세 개의 질문으로 경계를 찾았다
+| 구성 | 역할 |
+|---|---|
+| EventHub | Event Type별 Listener 등록과 동기·비동기 전달 |
+| EventHandler | 수신 Event를 검증하고 업무 상태에 반영 |
+| Task | 독립 Thread와 실행 주기 관리 |
+| Process | PreCheck와 Sequence Queue 관리 |
+| Sequence | 명령 실행, Event 대기, 재시도와 완료 판단 |
+| TaskRegistry | Task 등록, 초기화, 시작·중지 |
 
-### 1. 이 코드는 무엇을 확정하는가
+## Task
 
-이벤트 핸들러는 “이 이벤트를 정상적으로 받아들였다”까지만 확정한다. 이벤트가 의미하는 업무 상태를 기록하고, 이후 진행할 작업을 등록한다. 외부 시스템 호출까지 한 트랜잭션 안에서 끝내려 하지 않는다.
+- Task별 실행 Thread 생성
+- 설정된 주기로 등록된 Process 실행
+- Process 추가·삭제 요청을 Queue로 처리
+- Pause, Resume, Abort 상태 관리
+- Process 완료 Event 수신 후 목록에서 제거
 
-### 2. 실패했을 때 어디서 다시 시작하는가
+## Process
 
-재시작 지점이 코드 구조에 드러나야 한다. 외부 호출 전후를 같은 메서드의 로컬 변수로만 구분하면 프로세스가 재시작된 뒤 상태를 복원할 수 없다. 단계의 시작, 대기, 완료를 영속 상태로 표현하면 “다시 실행”과 “이어서 실행”을 구분할 수 있다.
+- 실행 전 PreCheck Sequence 지원
+- Sequence를 Queue 순서로 실행
+- 완료된 Sequence의 Listener 해제
+- `PASS` 상태의 Sequence를 뒤로 이동
+- 지정한 Sequence로 Redirect
+- 현재 Sequence 완료 후 다른 Sequence로 Redirect
 
-### 3. 같은 이벤트가 다시 와도 안전한가
+## Sequence
 
-분산 환경에서 중복은 예외가 아니라 정상 조건이다. 이벤트 식별자와 현재 작업 상태를 함께 확인하고, 이미 반영된 이벤트는 같은 결과를 반환하도록 했다. 멱등성은 특정 저장소 기술보다 **상태 전이 규칙**에 가깝다.
+- 정수 Step 기반 실행 위치 관리
+- Delay와 경과 시간 확인
+- Event Listener 등록과 해제
+- 완료 조건 검사
+- 재실행 시 내부 상태와 Listener 초기화
+- PreCheck Hold·Pass와 일반 완료 상태 분리
 
-## 최종 구조
+## Event 처리
 
-흐름은 다음 네 역할로 나뉘었다.
+- Event Class별 Dispatcher 생성
+- 동일 Listener Name의 중복 등록 방지
+- CopyOnWriteArrayList 기반 Listener 관리
+- 동기 전달과 고정 Thread Pool 기반 비동기 전달
+- Listener 실행 오류를 다른 Listener와 분리
 
-1. **수신 계층** — 메시지 형식과 출처를 검증한다.
-2. **상태 반영 계층** — 이벤트를 현재 업무 상태에 멱등하게 반영한다.
-3. **오케스트레이션 계층** — 다음 단계가 무엇인지 결정한다.
-4. **실행 계층** — 외부 호출과 재시도 정책을 수행한다.
+## AYTSS 적용
 
-이 구조의 장점은 테스트에서도 드러났다. 이벤트 수신 테스트는 메시지 계약에 집중하고, 오케스트레이션 테스트는 외부 시스템 없이 상태 전이만 검증할 수 있었다. 장애 재현 역시 특정 단계의 체크포인트에서 시작할 수 있게 됐다.
+AYTSS에서는 다음 규모로 `eventflow` 구조를 사용합니다.
 
-## 다음에 더 일찍 할 일
+- Task 구현 4개
+- Process 구현 19개
+- Sequence 구현 27개
+- EventHandler 구현 28개
 
-처음부터 모든 계층을 만들 필요는 없다. 다만 핸들러에 두 번째 외부 호출이 들어가거나, “이미 처리했는지” 확인하는 조건문이 생기는 순간에는 경계를 다시 볼 것이다. 복잡성의 신호를 기능 수가 아니라 **서로 다른 재시작 기준의 수**로 판단하는 것이 이번 작업에서 얻은 가장 큰 기준이다.
+TruckJob의 작업 종류와 적재 상태에 따라 Process를 생성하고, 대기구역·트위스트락 작업구역·안벽크레인·야드블록 Sequence를 조합합니다.
+
+## 작업 복구
+
+`eventflow` 자체가 영속 저장소를 제공하지는 않습니다. AYTSS에서 WorkOrder의 Progress, 현재 Sequence와 Alarm을 DB에 저장하고, 재기동 시 해당 값을 복원해 Process를 다시 생성합니다.
+
+## 별도 StateMachine 기능
+
+`eventflow` 라이브러리에는 Enum 기반 StateMachine과 조건부 Transition 기능도 포함되어 있습니다. AYTSS의 주요 작업 흐름은 이 기능보다 `Task → Process → Sequence` 구조를 사용합니다.
+
+상세 적용 내용은 [AYTSS 신규 구축]({{ '/projects/aytss/' | relative_url }})에 정리했습니다.
