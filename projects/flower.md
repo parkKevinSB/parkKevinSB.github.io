@@ -105,6 +105,11 @@ Flower는 BPMN 엔진, 분산 Scheduler, Temporal 또는 분산 Saga 엔진을 �
 
 ## 관련 페이지
 
+- [Flower AI Harness]({{ '/projects/flower-ai-harness/' | relative_url }})
+- [Flower Action Runtime]({{ '/projects/flower-action-runtime/' | relative_url }})
+- [Bloom Event Bus]({{ '/projects/bloom/' | relative_url }})
+- [ArchDox]({{ '/projects/archdox/' | relative_url }})
+- [Flower JVM 프로젝트 역할 구분]({{ '/notes/flower-jvm-project-boundaries/' | relative_url }})
 - [Flower 실행 구조 기술 기록]({{ '/notes/flower-in-jvm-flow-runtime/' | relative_url }})
 - [eventflow 실행 프레임워크]({{ '/projects/eventflow/' | relative_url }})
 

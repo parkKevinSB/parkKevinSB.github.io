@@ -39,19 +39,23 @@ permalink: /about/
 - OLED 두께 측정기 CIM 연동 및 Mask 검사 장비 개조·셋업
 - MQTT 기반 장비 제어 검증 코드 작성
 
-## 오픈소스
+## 개인·오픈소스 개발
 
-- Java 단일 JVM 오케스트레이션 런타임 [Flower](https://github.com/flowerjvm/flower) 설계 및 개발
-- Engine·Worker·Flow·Step 실행 모델과 Event·Timeout 대기 구조 구현
-- JDBC Checkpoint/Resume, Spring Boot Starter, 관측 및 테스트 모듈 개발
-- Maven Central 0.1.1 배포와 Apache License 2.0 공개
+- Java 단일 JVM 오케스트레이션 런타임 [Flower](https://github.com/flowerjvm/flower)
+- AI 호출의 검증·재시도 수명주기를 관리하는 [Flower AI Harness](https://github.com/flowerjvm/flower-ai-harness)
+- 업무 Action의 정책·승인·감사를 통제하는 [Flower Action Runtime](https://github.com/flowerjvm/flower-action-runtime)
+- JVM 내부 Typed Event Bus [Bloom](https://github.com/flowerjvm/bloom)
+- 건축사사무소 문서 Workflow Platform [ArchDox](https://github.com/parkKevinSB/archdox)
+- Maven Central 배포, GitHub Actions CI, 테스트와 공개 문서 관리
 
 ## 기술 경험
 
 | 구분 | 기술 |
 |---|---|
 | 백엔드 | Java, Spring Boot, Spring Framework, eGovFrame, MyBatis, Spring JDBC |
-| 오픈소스·프레임워크 | Flower, Maven Central, JUnit 5, Micrometer, OpenTelemetry |
+| 오픈소스·프레임워크 | Flower, Bloom, AI Harness, Action Runtime, Maven Central, JUnit 5 |
+| AI 연동 | Spring AI, OpenAI Java SDK, Anthropic Java SDK, Structured Output 검증 |
+| 프론트엔드 | React, TypeScript, Vite, React Query |
 | PC·장비 제어 | C#, .NET Framework, WinForms, WPF |
 | 데이터베이스 | Oracle, MSSQL, MySQL, SQLite |
 | PLC·산업 통신 | Beckhoff ST, TwinCAT ADS, CC-Link, RS-232/485 |
