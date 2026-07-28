@@ -1,0 +1,109 @@
+---
+layout: default
+title:
+description: 장비 제어부터 항만 자동화 백엔드까지, 현장에서 해결한 문제와 설계 판단을 기록합니다.
+---
+<section class="hero">
+  <div class="shell hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">장비 제어 · 항만 자동화 · 백엔드</p>
+      <h1>현장을 이해하고,<br><em>시스템으로 해결합니다.</em></h1>
+      <p class="hero-lead">
+        장비와 PLC를 직접 연결하던 제어 개발에서 시작해
+        현재는 항만 자동화 시스템을 유지보수하고 ECS·STS 장비 에뮬레이터를 설계·개발하고 있습니다.
+        물리 장비의 동작과 소프트웨어의 상태를 함께 이해하는 개발자 KevinPark입니다.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="{{ '/projects/' | relative_url }}">경력과 프로젝트</a>
+        <a class="button button-secondary" href="{{ '/archive/' | relative_url }}">기술 기록 읽기</a>
+      </div>
+    </div>
+
+    <aside class="focus-card" aria-label="주요 역량">
+      <p class="focus-label">지금까지 이어 온 역량</p>
+      <ol>
+        <li><span>01</span><strong>현장 문제 해결</strong><small>장비 셋업과 유지보수에서 원인을 끝까지 추적</small></li>
+        <li><span>02</span><strong>검증 환경 설계</strong><small>실제 장비 없이 작업·장애·연동 흐름을 재현</small></li>
+        <li><span>03</span><strong>장비·시스템 통신</strong><small>비동기 소켓, 시리얼, ADS, PLC 인터페이스 연동</small></li>
+      </ol>
+    </aside>
+  </div>
+</section>
+
+<section class="statement">
+  <div class="shell statement-grid">
+    <p class="section-kicker">일하는 방식</p>
+    <p class="statement-copy">
+      화면에서 보이는 기능만 만들지 않습니다.
+      <strong>센서와 장비가 실제로 어떻게 움직이는지, 통신이 끊기면 어떤 상태가 남는지,
+      운영자가 무엇을 보고 복구해야 하는지</strong>까지 함께 생각합니다.
+    </p>
+  </div>
+</section>
+
+<section class="section shell">
+  <div class="section-heading">
+    <div>
+      <p class="section-kicker">대표 경험</p>
+      <h2>대표 프로젝트</h2>
+    </div>
+    <a href="{{ '/projects/' | relative_url }}">전체 보기 →</a>
+  </div>
+
+  <div class="project-grid">
+    <article class="project-card project-card-featured">
+      <p class="project-type">2023.01 - 현재 · 항만 자동화</p>
+      <h3>ECS·STS 장비 에뮬레이터</h3>
+      <p>항만 자동화 시스템을 유지보수하며, 실제 장비 없이 작업 명령과 상태·장애·연동 흐름을 검증하는 에뮬레이터와 지원 도구를 직접 설계·개발했습니다.</p>
+      <ul class="chip-list"><li>C#</li><li>.NET Framework</li><li>TCP</li><li>상태 머신</li></ul>
+      <a href="{{ '/projects/' | relative_url }}#port-automation">경력 자세히 보기 →</a>
+    </article>
+    <article class="project-card">
+      <p class="project-type">2019.06 - 2020.07 · 물류 장비 제어</p>
+      <h3>LMS 물류 제어</h3>
+      <p>소켓·시리얼·CC-Link 통신을 활용한 C# 제어 프로그램을 개발하고 약 35대의 장비를 개조·셋업했습니다.</p>
+      <ul class="chip-list"><li>C#</li><li>WinForms</li><li>장비 통신</li></ul>
+      <a href="{{ '/projects/' | relative_url }}#lms-control">프로젝트 보기 →</a>
+    </article>
+    <article class="project-card">
+      <p class="project-type">2020.07 - 2021.03 · 머신 비전</p>
+      <h3>비전 정렬 프로그램</h3>
+      <p>GigE 카메라 영상과 정렬 알고리즘을 적용하고 생산 레시피, 결과 데이터, 이미지와 알람 이력을 관리했습니다.</p>
+      <ul class="chip-list"><li>C#</li><li>WPF</li><li>SQLite</li></ul>
+      <a href="{{ '/projects/' | relative_url }}#vision-align">프로젝트 보기 →</a>
+    </article>
+  </div>
+</section>
+
+<section class="section section-notes">
+  <div class="shell">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">최근 기록</p>
+        <h2>최근 기술 기록</h2>
+      </div>
+      <a href="{{ '/archive/' | relative_url }}">모든 글 →</a>
+    </div>
+
+    <div class="note-list">
+      {% for post in site.posts limit: 3 %}
+      <article class="note-row">
+        <div class="note-date">{{ post.date | date: "%Y.%m.%d" }}</div>
+        <div>
+          <p class="note-tag">{{ post.tags | first }}</p>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.description }}</p>
+        </div>
+        <a class="note-arrow" href="{{ post.url | relative_url }}" aria-label="{{ post.title }} 읽기">↗</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta shell">
+  <p class="section-kicker">경력을 근거로 남기는 공간</p>
+  <h2>해 온 일은<br>기록으로 증명합니다.</h2>
+  <p>현장에서 만난 문제, 선택한 기준, 실행 결과와 배움을 꾸준히 기록해 다음 설계와 다음 기회를 위한 자산으로 만듭니다.</p>
+  <a class="button button-primary" href="{{ '/about/' | relative_url }}">KevinPark 소개</a>
+</section>
