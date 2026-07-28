@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<article class="post shell">
+  <header class="post-header">
+    <a class="back-link" href="{{ '/archive/' | relative_url }}">← 모든 글</a>
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
+      {% if page.reading_time %}<span>{{ page.reading_time }}분</span>{% endif %}
+    </div>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="post-lead">{{ page.description }}</p>{% endif %}
+    {% if page.tags %}
+      <ul class="tag-list" aria-label="태그">
+        {% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+  </header>
+
+  <div class="post-body">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <p><strong>이 기록의 원칙</strong></p>
+    <p>공개 가능한 문제·판단·결과만 남기고, 고객명과 내부 식별 정보는 기록하지 않습니다.</p>
+    <a href="{{ '/archive/' | relative_url }}">다른 기록 읽기 →</a>
+  </footer>
+</article>
+
