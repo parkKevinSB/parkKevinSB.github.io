@@ -44,6 +44,11 @@ date: 2026-07-28 16:45:00 +0900
 - 복수 크레인 연결과 개별 세션
 - 장비 간 작업 영역 충돌 조건
 
+<figure class="evidence-figure">
+  <img src="{{ '/assets/images/projects/ecs-emulator.png' | relative_url }}" alt="ECS 야드 크레인 에뮬레이터 실행 화면">
+  <figcaption>ECS 에뮬레이터의 장비 상태, 야드 위치와 수동 제어 화면</figcaption>
+</figure>
+
 ## STS 에뮬레이터
 
 안벽 크레인의 선박 하역 작업을 다음 단위로 구현했습니다.
@@ -55,6 +60,11 @@ date: 2026-07-28 16:45:00 +0900
 - 단일·이중 트롤리 작업
 - 차량 도착과 작업 가능 상태 확인
 - 대기 작업의 실행 후보 선정
+
+<figure class="evidence-figure">
+  <img src="{{ '/assets/images/projects/sts-emulator.png' | relative_url }}" alt="STS 안벽 크레인 에뮬레이터 실행 화면">
+  <figcaption>STS 에뮬레이터의 크레인 상태, 선박 Bay 배치와 수동 이동 제어 화면</figcaption>
+</figure>
 
 ## 검증 시나리오
 

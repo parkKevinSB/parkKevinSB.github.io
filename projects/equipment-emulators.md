@@ -25,6 +25,11 @@ ECS는 야드 크레인의 실제 제어 프로그램을 대체하는 검증 대
 - 복수 크레인의 개별 통신 세션 관리
 - 현장별 메시지 변환과 장비 Profile 분리
 
+<figure class="evidence-figure">
+  <img src="{{ '/assets/images/projects/ecs-emulator.png' | relative_url }}" alt="ECS 야드 크레인 에뮬레이터 실행 화면">
+  <figcaption>ECS 에뮬레이터 — 복수 야드 크레인의 연결·운전 상태, 블록 위치, 작업 목록과 수동 축·스프레더 제어 화면</figcaption>
+</figure>
+
 ## STS 에뮬레이터
 
 STS는 선박과 육상 사이의 컨테이너 하역 작업을 검증하기 위한 안벽 크레인 에뮬레이터입니다.
@@ -35,6 +40,11 @@ STS는 선박과 육상 사이의 컨테이너 하역 작업을 검증하기 위
 - 컨테이너 적재 순서와 작업 가능 조건
 - 장비 위치, 진행 단계와 작업 완료 상태 보고
 - 대기 작업에서 다음 실행 후보를 선정하는 스케줄링
+
+<figure class="evidence-figure">
+  <img src="{{ '/assets/images/projects/sts-emulator.png' | relative_url }}" alt="STS 안벽 크레인 에뮬레이터 실행 화면">
+  <figcaption>STS 에뮬레이터 — 복수 안벽 크레인의 상태, 선박 Bay 배치, 크레인 측면·상면 위치와 수동 이동 제어 화면</figcaption>
+</figure>
 
 ## 공통 구조
 
