@@ -41,6 +41,7 @@ permalink: /about/
 
 ## 개인·오픈소스 개발
 
+- Flower를 기반으로 Slack 요청, 현장 로그·등록 DB 조회·소스 분석과 보고를 연결한 [사이트 유지보수 에이전트 서버]({{ '/projects/site-maintenance-agent/' | relative_url }})
 - Java 단일 JVM 오케스트레이션 런타임 [Flower](https://github.com/flowerjvm/flower)
 - Java 소스의 잘못된 Flower 사용을 19개 규칙으로 검사하는 `flower-check`
 - AI 호출의 검증·재시도 수명주기를 관리하는 [Flower AI Harness](https://github.com/flowerjvm/flower-ai-harness)

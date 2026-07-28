@@ -87,8 +87,8 @@ Prompt, 업무 데이터, 영속 저장, UI와 최종 감사 기록은 사용하
 
 ## 관련 페이지
 
+- [사이트 유지보수 에이전트 서버]({{ '/projects/site-maintenance-agent/' | relative_url }}) — 제한된 Agent 실행과 결과 검증을 실제 조사 Flow에 적용한 프로젝트
 - [Flower 오픈소스]({{ '/projects/flower/' | relative_url }})
 - [Flower Action Runtime]({{ '/projects/flower-action-runtime/' | relative_url }})
 - [ArchDox]({{ '/projects/archdox/' | relative_url }})
 - [Flower JVM 프로젝트 역할 구분]({{ '/notes/flower-jvm-project-boundaries/' | relative_url }})
-

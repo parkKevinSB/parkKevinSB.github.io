@@ -82,7 +82,7 @@ Bloom은 JVM 내부 Notification 전달용입니다. 분산 메시지 Broker, �
 
 ## 관련 페이지
 
+- [사이트 유지보수 에이전트 서버]({{ '/projects/site-maintenance-agent/' | relative_url }}) — Bloom Event를 Flower 대기 Step과 운영 상태 전달에 적용한 프로젝트
 - [Flower 오픈소스]({{ '/projects/flower/' | relative_url }})
 - [Flower AI Harness]({{ '/projects/flower-ai-harness/' | relative_url }})
 - [Flower JVM 프로젝트 역할 구분]({{ '/notes/flower-jvm-project-boundaries/' | relative_url }})
-
