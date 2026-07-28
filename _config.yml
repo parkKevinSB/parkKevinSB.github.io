@@ -1,0 +1,27 @@
+title: KevinPark의 기술 기록
+description: 장비 제어부터 항만 자동화 백엔드까지, 현장에서 해결한 문제와 설계 판단을 기록합니다.
+url: "https://parkkevinsb.github.io"
+baseurl: ""
+lang: ko-KR
+timezone: Asia/Seoul
+permalink: /notes/:title/
+markdown: kramdown
+highlighter: rouge
+future: false
+excerpt_separator: "<!--more-->"
+
+author:
+  name: KevinPark
+  github: parkKevinSB
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
