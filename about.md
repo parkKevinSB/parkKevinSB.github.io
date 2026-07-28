@@ -11,7 +11,7 @@ permalink: /about/
   <p>근무 이력과 담당 업무, 프로젝트에서 사용한 기술을 사실 중심으로 정리했습니다.</p>
 </section>
 
-<section class="shell prose-page">
+<section class="shell prose-page" markdown="1">
 
 ## 근무 이력
 
