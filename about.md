@@ -39,11 +39,19 @@ permalink: /about/
 - OLED 두께 측정기 CIM 연동 및 Mask 검사 장비 개조·셋업
 - MQTT 기반 장비 제어 검증 코드 작성
 
+## 오픈소스
+
+- Java 단일 JVM 오케스트레이션 런타임 [Flower](https://github.com/flowerjvm/flower) 설계 및 개발
+- Engine·Worker·Flow·Step 실행 모델과 Event·Timeout 대기 구조 구현
+- JDBC Checkpoint/Resume, Spring Boot Starter, 관측 및 테스트 모듈 개발
+- Maven Central 0.1.1 배포와 Apache License 2.0 공개
+
 ## 기술 경험
 
 | 구분 | 기술 |
 |---|---|
 | 백엔드 | Java, Spring Boot, Spring Framework, eGovFrame, MyBatis, Spring JDBC |
+| 오픈소스·프레임워크 | Flower, Maven Central, JUnit 5, Micrometer, OpenTelemetry |
 | PC·장비 제어 | C#, .NET Framework, WinForms, WPF |
 | 데이터베이스 | Oracle, MSSQL, MySQL, SQLite |
 | PLC·산업 통신 | Beckhoff ST, TwinCAT ADS, CC-Link, RS-232/485 |
