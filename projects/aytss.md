@@ -62,7 +62,7 @@ TOS의 TruckJob을 FMS가 실행하는 WorkOrder로 변환했습니다. 작업�
 
 ## eventflow 적용
 
-AYTSS는 직접 개발한 `eventflow`를 처음 적용한 운영 프로젝트입니다.
+AYTSS는 직접 개발한 [`eventflow`]({{ '/projects/eventflow/' | relative_url }})를 처음 적용한 운영 프로젝트입니다.
 
 | 구성 | 역할 |
 |---|---|
@@ -74,6 +74,8 @@ AYTSS는 직접 개발한 `eventflow`를 처음 적용한 운영 프로젝트입
 | Redirect | 현재 위치와 진행 상태에 맞는 Sequence로 전환 |
 
 AYTSS 본체에서는 `Task → Process → Sequence` 실행 구조와 이벤트 구독 기능을 사용합니다. `eventflow`에 포함된 별도 StateMachine 확장 기능은 이 프로젝트의 주요 실행 흐름에는 사용하지 않았습니다.
+
+[eventflow 실행 프레임워크 상세 보기]({{ '/projects/eventflow/' | relative_url }})
 
 ## 운영 관련 기능
 

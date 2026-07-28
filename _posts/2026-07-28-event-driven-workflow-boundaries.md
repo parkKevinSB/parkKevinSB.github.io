@@ -76,4 +76,4 @@ TruckJob의 작업 종류와 적재 상태에 따라 Process를 생성하고, �
 
 `eventflow` 라이브러리에는 Enum 기반 StateMachine과 조건부 Transition 기능도 포함되어 있습니다. AYTSS의 주요 작업 흐름은 이 기능보다 `Task → Process → Sequence` 구조를 사용합니다.
 
-상세 적용 내용은 [AYTSS 신규 구축]({{ '/projects/aytss/' | relative_url }})에 정리했습니다.
+프레임워크 전체 구성은 [eventflow 실행 프레임워크]({{ '/projects/eventflow/' | relative_url }})에, 실제 적용 내용은 [AYTSS 신규 구축]({{ '/projects/aytss/' | relative_url }})에 정리했습니다.
