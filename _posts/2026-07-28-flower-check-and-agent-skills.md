@@ -3,7 +3,7 @@ title: "Flower 코드 품질 도구: Agent Skills와 flower-check"
 description: Flower 코드 작성 지침을 제공하는 두 Agent Skill과 19개 규칙을 빌드에서 검사하는 flower-check의 역할과 구현 범위를 정리합니다.
 tags: [Flower, 개발 도구, 정적 분석]
 reading_time: 6
-date: 2026-07-28 18:30:00 +0900
+date: 2026-07-28 18:20:00 +0900
 ---
 
 ## 개발 도구 구성
