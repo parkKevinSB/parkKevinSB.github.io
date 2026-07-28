@@ -42,8 +42,10 @@ permalink: /about/
 ## 개인·오픈소스 개발
 
 - Java 단일 JVM 오케스트레이션 런타임 [Flower](https://github.com/flowerjvm/flower)
+- Java 소스의 잘못된 Flower 사용을 19개 규칙으로 검사하는 `flower-check`
 - AI 호출의 검증·재시도 수명주기를 관리하는 [Flower AI Harness](https://github.com/flowerjvm/flower-ai-harness)
 - 업무 Action의 정책·승인·감사를 통제하는 [Flower Action Runtime](https://github.com/flowerjvm/flower-action-runtime)
+- AI 코딩 에이전트용 [Flower App Guide](https://github.com/flowerjvm/flower-agent-skills)와 [Flower Action Runtime Guide](https://github.com/flowerjvm/flower-action-runtime-guide)
 - JVM 내부 Typed Event Bus [Bloom](https://github.com/flowerjvm/bloom)
 - 건축사사무소 문서 Workflow Platform [ArchDox](https://github.com/parkKevinSB/archdox)
 - Maven Central 배포, GitHub Actions CI, 테스트와 공개 문서 관리
@@ -54,6 +56,7 @@ permalink: /about/
 |---|---|
 | 백엔드 | Java, Spring Boot, Spring Framework, eGovFrame, MyBatis, Spring JDBC |
 | 오픈소스·프레임워크 | Flower, Bloom, AI Harness, Action Runtime, Maven Central, JUnit 5 |
+| 개발 도구 | flower-check, JavaParser, SARIF, Agent Skills, Maven·Gradle Plugin |
 | AI 연동 | Spring AI, OpenAI Java SDK, Anthropic Java SDK, Structured Output 검증 |
 | 프론트엔드 | React, TypeScript, Vite, React Query |
 | PC·장비 제어 | C#, .NET Framework, WinForms, WPF |

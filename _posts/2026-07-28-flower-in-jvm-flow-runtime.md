@@ -88,18 +88,28 @@ Starter는 다음 Bean과 수명주기를 자동 구성합니다.
 
 운영 확인을 위해 Engine Dump API와 간단한 내부 Console을 선택적으로 활성화할 수 있습니다. 공개 Endpoint가 아니라 기존 Spring Security나 내부 네트워크로 보호하는 관리 기능입니다.
 
-## 테스트와 검사
+## 결정론적 테스트
 
 `flower-testkit`은 수동 Clock, 수동 Tick, In-memory EventBus, Recording Listener와 Fake Checkpoint Store를 제공합니다. Scheduler나 실제 시간을 사용하지 않고 Step 이동, Timeout과 복구를 검증할 수 있습니다.
 
-`flower-check`는 Java 소스를 분석해 다음과 같은 사용 패턴을 검사합니다.
+## flower-check 빌드 검사
+
+`flower-check`는 Java 소스를 분석해 알려진 Flower 사용 규칙을 빌드 단계에서 검사합니다. 현재 19개 규칙을 구현했으며, 주요 검사 범위는 다음과 같습니다.
 
 - Worker Tick 안의 Blocking 호출
-- Step 외부에 숨겨진 실행 흐름
-- 불명확한 Flow·Step 경계
-- 승인 주석 없이 사용한 예외 패턴
+- Step 내부의 LLM·Provider SDK 직접 호출
+- 다른 Flow의 직접 구동과 잘못된 `goTo` 대상
+- 대기 Step의 Timeout·취소 및 Durable Step의 복구 정책
+- Event Callback의 상태 결정과 Engine·Worker 수명주기 소유
+- Step ID 중복, Step 인스턴스 공유와 `ExecutionContext` 오용
+- 반복 Scheduler 승인, Guard Side Effect와 EventStep 복구
+- Action Registry·Policy·승인 절차를 우회하는 선택형 규칙
 
-Maven Plugin은 `verify`, Gradle Plugin은 `check` 단계에 연결됩니다.
+JavaParser 기반 검사 엔진은 Plain Text와 SARIF를 출력합니다. 규칙별 심각도, 사유가 포함된 Suppression과 Baseline 파일을 지원해 기존 프로젝트에도 단계적으로 적용할 수 있습니다.
+
+Maven Plugin은 `verify`, Gradle Plugin은 `check` 단계에 연결됩니다. 실제 임시 호스트 프로젝트를 이용한 Maven Invoker와 Gradle TestKit으로 Plugin 동작을 검증하고, Flower 저장소 자체도 Reactor 빌드에서 같은 검사를 수행합니다.
+
+구현 지침을 제공하는 두 Agent Skill과의 역할 구분은 [Flower 코드 품질 도구]({{ '/notes/flower-check-and-agent-skills/' | relative_url }})에 별도로 정리했습니다.
 
 ## Event-loop 실행 모델
 

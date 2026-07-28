@@ -1,6 +1,6 @@
 ---
-title: Flower JVM 프로젝트 역할 구분
-description: Flower, Bloom, Flower AI Harness, Flower Action Runtime과 ArchDox가 각각 담당하는 실행 영역을 구분합니다.
+title: Flower JVM 프로젝트와 개발 도구 역할 구분
+description: Flower, Bloom, AI Harness, Action Runtime, Agent Skills, flower-check와 ArchDox의 역할을 구분합니다.
 tags: [Flower JVM, Java, Architecture]
 reading_time: 5
 date: 2026-07-28 18:15:00 +0900
@@ -14,6 +14,8 @@ date: 2026-07-28 18:15:00 +0900
 | Bloom | JVM 내부 객체·모듈 사이의 Event 전달 |
 | Flower AI Harness | AI 호출의 제출·검증·재시도·취소 수명주기 |
 | Flower Action Runtime | 업무 Action의 정책·승인·중복 방지·감사와 실행 통제 |
+| Flower Agent Skills | 코딩 에이전트에 Flower와 Action Runtime의 구현·검토 규칙 제공 |
+| `flower-check` | Java 소스의 잘못된 Flower 사용 패턴을 빌드 단계에서 차단 |
 | ArchDox | 위 구성요소를 문서 업무에 적용한 실제 Platform |
 
 <!--more-->
@@ -70,6 +72,19 @@ ActionProposal
 
 AI Harness의 결과가 업무 Action을 제안할 수는 있지만 직접 Domain Service를 호출하지 않습니다. Action Runtime이 실행 주체, Tenant, 위험도와 승인 상태를 확인한 뒤 등록된 Executor만 호출합니다.
 
+## Flower 개발 도구
+
+Flower Agent Skills와 `flower-check`는 Runtime이 아니라 개발 단계에 적용하는 도구입니다.
+
+```text
+Agent Skills로 구현 규칙 확인
+→ 애플리케이션 코드 작성
+→ flower-check로 정적 검사
+→ flower-testkit으로 실행 동작 검증
+```
+
+`flower-app-guide`는 Flow·Step·Guard, 이벤트 대기, 복구와 테스트를 다룹니다. `flower-action-runtime-guide`는 Action 정책·승인, 실행 방식, JDBC CAS와 복구를 다룹니다. `flower-check`는 작성된 소스를 19개 규칙으로 검사하고 Maven `verify` 또는 Gradle `check`에서 빌드를 차단합니다.
+
 ## ArchDox 적용
 
 ArchDox는 다음과 같이 역할을 나눕니다.
@@ -90,5 +105,6 @@ ArchDox는 다음과 같이 역할을 나눕니다.
 - [Bloom](https://github.com/flowerjvm/bloom)
 - [Flower AI Harness](https://github.com/flowerjvm/flower-ai-harness)
 - [Flower Action Runtime](https://github.com/flowerjvm/flower-action-runtime)
+- [Flower Agent Skills](https://github.com/flowerjvm/flower-agent-skills)
+- [Flower Action Runtime Guide](https://github.com/flowerjvm/flower-action-runtime-guide)
 - [ArchDox](https://github.com/parkKevinSB/archdox)
-

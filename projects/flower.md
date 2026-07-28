@@ -5,7 +5,7 @@ permalink: /projects/flower/
 period: 2026 - 현재
 category: Java 오픈소스 프레임워크
 role: 프로젝트 설계·개발, 테스트, 문서화 및 Maven Central 배포
-stack: Java 8/17, Maven, Spring Boot, JDBC, JUnit 5, Micrometer, OpenTelemetry
+stack: Java 8/17, Maven, Spring Boot, JDBC, JavaParser, JUnit 5, Micrometer, OpenTelemetry
 ---
 
 ## 프로젝트 개요
@@ -35,7 +35,7 @@ Flower는 Spring 및 Java 애플리케이션 내부의 장시간 작업을 명�
 - JDBC 체크포인트 저장소와 DB별 Schema
 - 로그, Micrometer Metric과 OpenTelemetry 연동
 - 수동 Clock과 Tick 기반 결정론적 테스트 도구
-- 잘못된 Flower 사용 패턴을 검사하는 `flower-check`
+- 19개 사용 규칙을 검사하는 `flower-check` 엔진, CLI, Maven·Gradle Plugin
 - Callback·승인·도구 응답·Deadline 대기용 별도 Event-loop 실행 모델
 - Maven Central 릴리스와 GitHub Actions 배포 구성
 
@@ -79,6 +79,23 @@ Flower의 영속 기능은 실행 전체를 재현하는 Replay가 아니라 현
 
 외부 API 호출이나 DB 변경은 애플리케이션에서 멱등성을 보장해야 하며, 다중 JVM 간 Flow 소유권과 분산 잠금은 Flower가 처리하지 않습니다.
 
+## flower-check
+
+`flower-check`는 Flower를 사용하는 호스트 애플리케이션의 Java 소스를 빌드 단계에서 검사하는 개발 도구입니다. 문서에만 의존하지 않고 잘못된 실행 구조를 자동으로 확인하기 위해 Flower 저장소 안에서 함께 개발했습니다.
+
+| 구성 | 내용 |
+|---|---|
+| 검사 엔진 | JavaParser 기반 소스 분석, ServiceLoader 규칙 등록 |
+| 규칙 | Flower Core 16개, Action Runtime용 선택 규칙 3개 |
+| 출력 | 파일·행 번호가 포함된 Plain Text와 SARIF |
+| 도입 지원 | 규칙별 심각도 설정, Suppression 사유, Baseline |
+| Maven | `flower-check-maven-plugin`을 `verify`에 연결 |
+| Gradle | 전용 Plugin의 `flowerCheck` Task를 `check`에 연결 |
+
+주요 검사 대상은 Worker Thread의 Blocking, Step 내부 Provider 직접 호출, Flow 간 직접 구동, 대기 작업의 Timeout·취소, Durable Step 복구 정책, 잘못된 `goTo`, Event Callback의 상태 결정, Engine·Worker 수명주기 오용, Guard Side Effect와 EventStep 복구입니다.
+
+Maven Invoker와 Gradle TestKit으로 임시 호스트 프로젝트의 실제 빌드를 검증하며, Flower 저장소 자체도 Reactor `verify`에서 `flower-check`를 실행합니다. `flower-check`는 정적 검사 도구이며 실행 중 권한·정책 통제와 동작 테스트를 대체하지 않습니다.
+
 ## 공개 모듈
 
 | 모듈 | 역할 |
@@ -91,6 +108,7 @@ Flower의 영속 기능은 실행 전체를 재현하는 Replay가 아니라 현
 | `flower-observability` | Logging, Metric, Tracing과 실행 완료 대기 |
 | `flower-testkit` | ManualClock, 수동 Tick과 Flow Assertion |
 | `flower-check` | Flower 사용 규칙 정적 검사 |
+| `flower-check-annotations` | 의도적인 예외에 사용하는 SOURCE 보존 승인 표시 |
 | `flower-check-maven-plugin` | Maven Verify 연동 |
 | `flower-check-gradle-plugin` | Gradle Check 연동 |
 
@@ -107,8 +125,10 @@ Flower는 BPMN 엔진, 분산 Scheduler, Temporal 또는 분산 Saga 엔진을 �
 
 - [Flower AI Harness]({{ '/projects/flower-ai-harness/' | relative_url }})
 - [Flower Action Runtime]({{ '/projects/flower-action-runtime/' | relative_url }})
+- [Flower Agent Skills]({{ '/projects/flower-agent-skills/' | relative_url }})
 - [Bloom Event Bus]({{ '/projects/bloom/' | relative_url }})
 - [ArchDox]({{ '/projects/archdox/' | relative_url }})
+- [Flower 코드 품질 도구 기술 기록]({{ '/notes/flower-check-and-agent-skills/' | relative_url }})
 - [Flower JVM 프로젝트 역할 구분]({{ '/notes/flower-jvm-project-boundaries/' | relative_url }})
 - [Flower 실행 구조 기술 기록]({{ '/notes/flower-in-jvm-flow-runtime/' | relative_url }})
 - [eventflow 실행 프레임워크]({{ '/projects/eventflow/' | relative_url }})
