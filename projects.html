@@ -1,0 +1,240 @@
+---
+layout: default
+title: 경력과 프로젝트
+description: 항만 자동화, 장비 제어, 머신 비전, PLC 연동과 웹 개발까지 KevinPark의 경력과 프로젝트를 정리합니다.
+permalink: /projects/
+---
+<section class="page-hero shell">
+  <p class="section-kicker">경력과 프로젝트</p>
+  <h1>현장에서 쌓은<br>문제 해결의 기록</h1>
+  <p>장비를 직접 움직이는 제어 프로그램에서 시작해, 현재는 항만 자동화 시스템의 운영과 장비 에뮬레이터 기반 사전 검증 환경을 함께 만들고 있습니다.</p>
+</section>
+
+<section class="shell career-timeline" aria-labelledby="career-title">
+  <div class="section-heading">
+    <div>
+      <p class="section-kicker">경력</p>
+      <h2 id="career-title">경력 흐름</h2>
+    </div>
+  </div>
+
+  <article class="career-item">
+    <div class="career-period">2023.01 - 현재</div>
+    <div>
+      <p class="project-type">토탈소프트뱅크 연구소 · 대리</p>
+      <h3>항만 자동화 시스템 유지보수 및 검증 도구 개발</h3>
+      <p>Java·Spring Framework 기반 운영 시스템을 유지보수하고, 2024년부터 C# 기반 ECS·STS 장비 에뮬레이터와 연동 검증 도구군을 직접 설계·구현해 왔습니다.</p>
+      <ul class="chip-list"><li>Java</li><li>Spring Framework</li><li>C#</li><li>.NET Framework</li><li>항만 자동화</li></ul>
+    </div>
+  </article>
+
+  <article class="career-item">
+    <div class="career-period">2019.06 - 2022.12</div>
+    <div>
+      <p class="project-type">에이치아이티 제어팀 · 사원</p>
+      <h3>PC 제어와 PLC 제어</h3>
+      <p>C#, WinForms, WPF 기반 장비 제어 프로그램과 Beckhoff ST 제어 로직을 개발했습니다. LMS, 비전 정렬, 로거, CIM 연동 프로그램을 개발하고 현장 셋업을 수행했습니다.</p>
+      <ul class="chip-list"><li>C#</li><li>WPF</li><li>WinForms</li><li>Beckhoff ST</li><li>현장 셋업</li></ul>
+    </div>
+  </article>
+
+  <article class="career-item">
+    <div class="career-period">2016.09 - 2017.03</div>
+    <div>
+      <p class="project-type">개인 프로젝트</p>
+      <h3>착한주유소 웹·앱</h3>
+      <p>전국 약 1만 2천 개 주유소의 위치와 변경·불법 이력 데이터를 정리하고, PHP와 MySQL을 이용해 조회할 수 있는 웹·앱을 만들었습니다.</p>
+      <ul class="chip-list"><li>JavaScript</li><li>HTML/CSS</li><li>PHP</li><li>MySQL</li></ul>
+    </div>
+  </article>
+</section>
+
+<section class="shell project-detail-list">
+  <div class="section-heading">
+    <div>
+      <p class="section-kicker">주요 프로젝트</p>
+      <h2>직접 해결한 문제들</h2>
+    </div>
+  </div>
+
+  <article class="project-detail" id="port-automation">
+    <header>
+      <div>
+        <p class="project-type">2024 - 현재 · 설계 및 개발</p>
+        <h2>ECS·STS 장비 에뮬레이터와 연동 검증 도구</h2>
+      </div>
+    </header>
+    <div class="project-detail-grid">
+      <div>
+        <h3>문제와 역할</h3>
+        <p>실제 장비가 없거나 사용하기 어려운 단계에서도 항만 자동화 소프트웨어를 검증할 수 있도록 솔루션 전반을 직접 설계하고 구현했습니다.</p>
+      </div>
+      <div>
+        <h3>ECS 에뮬레이터</h3>
+        <p>야드 크레인의 좌표 이동, 작업 명령, 컨테이너 픽업·적치, 스프레더 동작, 장비 간섭과 외부 시스템 연동을 상태 기반으로 재현했습니다.</p>
+      </div>
+      <div>
+        <h3>STS 에뮬레이터</h3>
+        <p>갠트리·트롤리·호이스트 축과 단일·이중 트롤리 작업을 모델링하고, 선박·플랫폼·차량 사이의 컨테이너 흐름을 구현했습니다.</p>
+      </div>
+      <div>
+        <h3>작업 스케줄링</h3>
+        <p>작업 큐에서 실행 후보를 만들고 장비 상태, 적재 순서, 물리 제약과 차량 도착 조건을 검사한 뒤 우선순위를 평가하도록 구성했습니다.</p>
+      </div>
+      <div>
+        <h3>통신과 확장 구조</h3>
+        <p>비동기 TCP 통신, 송수신 큐, 재접속, 메시지 파싱·처리 계층을 분리하고 복수 장비·현장 프로토콜을 확장할 수 있게 설계했습니다.</p>
+      </div>
+      <div>
+        <h3>운영·연동 도구</h3>
+        <p>WinForms 기반 모니터링·수동 제어 화면과 RFID, 차단기, 센서 보정, 외부 인터페이스를 검증하는 보조 에뮬레이터를 함께 개발했습니다.</p>
+      </div>
+    </div>
+    <ul class="chip-list"><li>C#</li><li>.NET Framework 4.7.2</li><li>WinForms</li><li>비동기 TCP</li><li>상태 머신</li><li>스케줄링</li><li>Spring.NET</li><li>iBATIS</li></ul>
+    <p class="privacy-note">보안과 계약을 위해 고객명, 내부 시스템명, 운영 수치와 상세 구조는 공개하지 않습니다.</p>
+  </article>
+
+  <article class="project-detail" id="lms-control">
+    <header>
+      <div>
+        <p class="project-type">2019.06 - 2020.07 · 개발 및 셋업</p>
+        <h2>LMS 물류 제어 프로그램</h2>
+      </div>
+    </header>
+    <div class="project-detail-grid">
+      <div>
+        <h3>목표</h3>
+        <p>상위 레이저 장비의 명령에 따라 여러 LMS 스테이지와 실린더, 센서, 조명 장치를 안정적으로 제어하는 프로그램을 개발했습니다.</p>
+      </div>
+      <div>
+        <h3>구현</h3>
+        <p>C#과 WinForms를 사용하고 LMS 간 소켓, ECS·조명 컨트롤러 간 시리얼, 장비 입출력에는 CC-Link 통신을 적용했습니다.</p>
+      </div>
+      <div>
+        <h3>결과</h3>
+        <p>약 1년 동안 35대가량의 장비 프로그램을 개조하고 현장 셋업을 수행하며 장애 대응과 원인 분석 경험을 쌓았습니다.</p>
+      </div>
+    </div>
+    <ul class="chip-list"><li>C#</li><li>WinForms</li><li>소켓 통신</li><li>시리얼 통신</li><li>CC-Link</li><li>서보 제어</li></ul>
+  </article>
+
+  <article class="project-detail" id="vision-align">
+    <header>
+      <div>
+        <p class="project-type">2020.07 - 2021.03 · 개발</p>
+        <h2>머신 비전 정렬 프로그램</h2>
+      </div>
+    </header>
+    <div class="project-detail-grid">
+      <div>
+        <h3>목표</h3>
+        <p>대상 물체를 GigE 카메라로 촬영하고 위치와 각도를 계산해 하위 스테이지에 정렬 값을 전달하는 프로그램을 개발했습니다.</p>
+      </div>
+      <div>
+        <h3>구현</h3>
+        <p>C#, WPF, 머신 비전 알고리즘을 적용하고 소켓·시리얼·ADS·미쓰비시 PLC 통신을 연동했습니다.</p>
+      </div>
+      <div>
+        <h3>운영 기능</h3>
+        <p>생산 레시피, 촬영 이미지, 정렬 결과 데이터, 알람과 로그를 SQLite에 저장하고 화면에서 조회할 수 있게 만들었습니다.</p>
+      </div>
+    </div>
+    <ul class="chip-list"><li>C#</li><li>WPF</li><li>머신 비전</li><li>SQLite</li><li>GigE</li><li>PLC 통신</li></ul>
+  </article>
+
+  <article class="project-detail" id="beckhoff-library">
+    <header>
+      <div>
+        <p class="project-type">2021.06 - 2021.09 · 개발</p>
+        <h2>Beckhoff LMS 제어 라이브러리</h2>
+      </div>
+    </header>
+    <div class="project-detail-grid">
+      <div>
+        <h3>목표</h3>
+        <p>기존 Rexroth LMS 통신 인터페이스를 Beckhoff 환경에서 사용할 수 있도록 이식하고 시연 장비를 제어했습니다.</p>
+      </div>
+      <div>
+        <h3>구현</h3>
+        <p>ST 언어로 소켓 통신 라이브러리를 만들고 TestAndSet을 적용해 동시 실행 상황을 제어했습니다.</p>
+      </div>
+      <div>
+        <h3>구조화</h3>
+        <p>C# 제어 흐름을 ST로 옮기며 이벤트 기반 제어와 옵저버 패턴을 적용한 데모 프로그램을 개발했습니다.</p>
+      </div>
+    </div>
+    <ul class="chip-list"><li>Beckhoff</li><li>ST</li><li>Codesys</li><li>소켓 통신</li><li>동시성 제어</li></ul>
+  </article>
+
+  <article class="project-detail" id="ads-file-manager">
+    <header>
+      <div>
+        <p class="project-type">2021.03 - 2021.06 · 개발</p>
+        <h2>TwinCAT ADS 파일 관리자</h2>
+      </div>
+    </header>
+    <div class="project-detail-grid">
+      <div>
+        <h3>목표</h3>
+        <p>Beckhoff PLC의 장비 진행 상태를 기록하고 파라미터를 파일로 관리하는 상시 실행 프로그램을 개발했습니다.</p>
+      </div>
+      <div>
+        <h3>구현</h3>
+        <p>C#과 WPF로 트레이 아이콘 프로그램을 만들고 ADS 인터페이스를 통해 PLC와 상시 통신하도록 구성했습니다.</p>
+      </div>
+      <div>
+        <h3>운영 기능</h3>
+        <p>설정값의 XML 입출력, 로그 파일 생성, 소켓을 통한 원격 로그·파라미터 관리를 구현했습니다.</p>
+      </div>
+    </div>
+    <ul class="chip-list"><li>C#</li><li>WPF</li><li>TwinCAT ADS</li><li>XML</li><li>로그 관리</li></ul>
+  </article>
+
+  <article class="project-detail" id="measurement-cim">
+    <header>
+      <div>
+        <p class="project-type">2022.03 - 2022.07 · 개조 및 셋업</p>
+        <h2>두께 측정기 CIM 연동</h2>
+      </div>
+    </header>
+    <div class="project-detail-grid">
+      <div>
+        <h3>목표</h3>
+        <p>하위 스테이지의 두께 측정기를 실시간 제어하고 측정 결과를 상위 생산 시스템에 전달했습니다.</p>
+      </div>
+      <div>
+        <h3>통신</h3>
+        <p>측정기와는 소켓 및 RS-232·485 시리얼 통신을 사용하고, 상위 CIM과는 소켓 인터페이스를 적용했습니다.</p>
+      </div>
+      <div>
+        <h3>역할</h3>
+        <p>기존 C# WinForms 프로그램을 개조하고 현장에서 장비와 통신 상태를 확인하며 셋업을 완료했습니다.</p>
+      </div>
+    </div>
+    <ul class="chip-list"><li>C#</li><li>WinForms</li><li>CIM</li><li>RS-232/485</li><li>현장 셋업</li></ul>
+  </article>
+
+  <article class="project-detail" id="good-gas-station">
+    <header>
+      <div>
+        <p class="project-type">2016.09 - 2017.03 · 개인 프로젝트</p>
+        <h2>착한주유소 웹·앱</h2>
+      </div>
+    </header>
+    <div class="project-detail-grid">
+      <div>
+        <h3>목표</h3>
+        <p>전국 주유소 가운데 불법 이력이 없는 곳을 선별해 위치와 이력 정보를 제공하는 서비스를 만들었습니다.</p>
+      </div>
+      <div>
+        <h3>데이터</h3>
+        <p>약 1만 2천 개 주유소의 고유 코드, 위치 정보, 변경 이력과 불법 이력을 정리했습니다.</p>
+      </div>
+      <div>
+        <h3>구현</h3>
+        <p>JavaScript, HTML, CSS로 화면을 만들고 PHP를 통해 MySQL 데이터베이스와 통신하도록 구현했습니다.</p>
+      </div>
+    </div>
+    <ul class="chip-list"><li>JavaScript</li><li>HTML/CSS</li><li>PHP</li><li>MySQL</li><li>공공 데이터</li></ul>
+  </article>
+</section>
