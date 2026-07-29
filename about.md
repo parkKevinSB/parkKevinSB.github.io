@@ -35,9 +35,9 @@ permalink: /about/
 
 ## 에이치아이티
 
-- Bosch LMS 물류 제어 프로그램 개발 및 약 35대 장비 개조·셋업
+- Bosch Rexroth LMS 물류 제어 프로그램 개발 및 약 35대 장비 개조·셋업
 - 머신 비전 정렬 프로그램과 레시피·결과 데이터 관리 기능 개발
-- Beckhoff PLC용 LMS 통신 라이브러리와 데모 장비 프로그램 개발
+- Bosch Rexroth LMS를 Beckhoff PLC에서 제어하는 [통신 라이브러리와 데모 장비 프로그램]({{ '/projects/beckhoff-lms-library/' | relative_url }}) 개발
 - TwinCAT ADS 기반 장비 상태 로거와 파라미터 파일 관리자 개발
 - OLED 두께 측정기 CIM 통신 연동
 - OLED Mask 인장기 1대와 검사기 4대 프로그램 개조·현장 셋업
