@@ -2,7 +2,7 @@
 title: ArchDox
 description: 감리 문서·체크리스트 작성, AI 검토와 문장 보정, 문서 생성, 법령 지식 갱신 및 MCP 연결을 제공하는 건축사사무소용 Workflow Platform입니다.
 permalink: /projects/archdox/
-period: 2025 - 현재
+period: 2026.05 - 현재
 category: 개인 개발 · 공개 저장소 · AWS 운영
 role: 기획 및 전체 Architecture, Backend·Frontend, 문서·AI·MCP 실행 구조 개발
 stack: Java 21, Spring Boot, PostgreSQL, React, TypeScript, Flower, Bloom, AWS Lightsail, Docker, MinIO/S3
