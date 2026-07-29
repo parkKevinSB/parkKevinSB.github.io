@@ -92,7 +92,7 @@ CAS는 Run 상태의 충돌을 막지만 외부 Side Effect의 Exactly-once 실�
 
 ## 관련 페이지
 
-- [사이트 유지보수 에이전트 서버]({{ '/projects/site-maintenance-agent/' | relative_url }}) — 정책·승인·감사 Pipeline을 현장 유지보수 Action에 적용한 프로젝트
+- [항만 현장 유지보수 AI 에이전트 서버]({{ '/projects/site-maintenance-agent/' | relative_url }}) — 정책·승인·감사 Pipeline을 현장 유지보수 Action에 적용한 프로젝트
 - [Flower 오픈소스]({{ '/projects/flower/' | relative_url }})
 - [Flower AI Harness]({{ '/projects/flower-ai-harness/' | relative_url }})
 - [ArchDox]({{ '/projects/archdox/' | relative_url }})

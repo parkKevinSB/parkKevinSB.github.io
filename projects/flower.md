@@ -123,7 +123,7 @@ Flower는 BPMN 엔진, 분산 Scheduler, Temporal 또는 분산 Saga 엔진을 �
 
 ## 관련 페이지
 
-- [사이트 유지보수 에이전트 서버]({{ '/projects/site-maintenance-agent/' | relative_url }}) — Flower Flow·Checkpoint·Worker를 적용해 현장 검증한 Java 오케스트레이터
+- [항만 현장 유지보수 AI 에이전트 서버]({{ '/projects/site-maintenance-agent/' | relative_url }}) — Flower Flow·Checkpoint·Worker를 적용해 현장 검증한 Java 오케스트레이터
 - [Flower AI Harness]({{ '/projects/flower-ai-harness/' | relative_url }})
 - [Flower Action Runtime]({{ '/projects/flower-action-runtime/' | relative_url }})
 - [Flower Agent Skills]({{ '/projects/flower-agent-skills/' | relative_url }})
