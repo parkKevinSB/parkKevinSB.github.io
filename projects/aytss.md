@@ -62,20 +62,7 @@ TOS의 TruckJob을 FMS가 실행하는 WorkOrder로 변환했습니다. 작업�
 
 ## eventflow 적용
 
-AYTSS는 직접 개발한 [`eventflow`]({{ '/projects/eventflow/' | relative_url }})를 처음 적용한 운영 프로젝트입니다.
-
-| 구성 | 역할 |
-|---|---|
-| EventHub | 메시지 수신, 상태 변경과 작업 결과를 이벤트로 전달 |
-| Task | 독립 실행 주기와 Process 목록 관리 |
-| Process | 하나의 업무를 구성하는 Sequence 순서 관리 |
-| Sequence | 구간별 상태 확인, 명령 송신, 대기·재시도·완료 처리 |
-| PreCheck | 작업 실행 전 장비와 WorkOrder 상태 검사 |
-| Redirect | 현재 위치와 진행 상태에 맞는 Sequence로 전환 |
-
-AYTSS 본체에서는 `Task → Process → Sequence` 실행 구조와 이벤트 구독 기능을 사용합니다. `eventflow`에 포함된 별도 StateMachine 확장 기능은 이 프로젝트의 주요 실행 흐름에는 사용하지 않았습니다.
-
-[eventflow 실행 프레임워크 상세 보기]({{ '/projects/eventflow/' | relative_url }})
+AYTSS에서 장비 작업을 `Task → Process → Sequence` 단위로 나누고, 이벤트 수신에 따라 다음 단계로 진행하는 `eventflow` 실행 구조를 설계·적용했습니다. 작업 실행 전 상태 검사와 현재 진행 상태에 맞는 단계 전환도 이 구조에서 처리합니다.
 
 ## 운영 관련 기능
 

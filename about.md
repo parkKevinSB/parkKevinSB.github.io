@@ -27,7 +27,7 @@ permalink: /about/
 - 일본 신규 터미널의 사이트별 기능 개발, ECS 에뮬레이터 검증, 배포 및 롤아웃
 - 대만 항만 AYTSS 프로젝트의 기반 구조와 초기 버전 신규 개발
 - TOS 작업지시를 FMS 실행 단위로 변환하는 WorkOrder 및 작업 흐름 구현
-- 독자 개발한 `eventflow` 실행 프레임워크를 AYTSS에 최초 적용
+- AYTSS에 `eventflow` 작업 실행 구조 설계·적용
 - TLS [QMS]({{ '/projects/tls-qms/' | relative_url }}) Java 서버 설계·개발과 STS ECS 연동
 - 선박 WorkQueue·WorkOrder 상태 관리, Single/Dual Trolley Scheduling과 작업 진행 보고 처리
 - Netty 기반 [LI Net Socket]({{ '/projects/li-net-socket/' | relative_url }}) 구조 설계와 Spring Boot Starter·Agent Skill 개발

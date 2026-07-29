@@ -132,6 +132,4 @@ Flower는 BPMN 엔진, 분산 Scheduler, Temporal 또는 분산 Saga 엔진을 �
 - [Flower 코드 품질 도구 기술 기록]({{ '/notes/flower-check-and-agent-skills/' | relative_url }})
 - [Flower JVM 프로젝트 역할 구분]({{ '/notes/flower-jvm-project-boundaries/' | relative_url }})
 - [Flower 실행 구조 기술 기록]({{ '/notes/flower-in-jvm-flow-runtime/' | relative_url }})
-- [eventflow 실행 프레임워크]({{ '/projects/eventflow/' | relative_url }})
-
 <p class="scope-note">저장소, 소스, 테스트, 문서와 릴리스 이력은 공개 GitHub 저장소에서 확인할 수 있습니다. 페이지의 버전과 모듈 정보는 Flower 0.1.1 공개 릴리스를 기준으로 작성했습니다.</p>
