@@ -17,7 +17,7 @@ permalink: /about/
 
 | 기간 | 소속 | 담당 |
 |---|---|---|
-| 2023.01 - 현재 | 토탈소프트뱅크 연구소 · 대리 | 항만 자동화 시스템 유지보수, 신규 사이트 개발, 장비 에뮬레이터 및 검증 도구 개발 |
+| 2023.01 - 현재 | 토탈소프트뱅크 연구소 · 대리 | 항만 자동화 시스템 유지보수, 신규 사이트 개발, 장비 제어 프로그램 및 검증 도구 개발 |
 | 2019.06 - 2022.12 | 에이치아이티 제어팀 · 사원 | C# PC 제어, 머신 비전, Beckhoff PLC 제어, 장비 개조 및 현장 셋업 |
 | 2016.09 - 2017.03 | 개인 프로젝트 | 주유소 정보 웹·앱 개발 및 데이터베이스 관리 |
 
@@ -31,7 +31,7 @@ permalink: /about/
 - TLS [QMS]({{ '/projects/tls-qms/' | relative_url }}) Java 서버 설계·개발과 STS ECS 연동
 - 선박 WorkQueue·WorkOrder 상태 관리, Single/Dual Trolley Scheduling과 작업 진행 보고 처리
 - [Netty 기반 소켓 라이브러리]({{ '/projects/netty-socket-library/' | relative_url }}) 구조 설계와 Spring Boot Starter·Agent Skill 개발
-- ECS·STS 장비 에뮬레이터와 연동 검증 도구 설계 및 구현
+- ECS·STS 장비 제어 프로그램과 내장 에뮬레이션·연동 검증 도구 설계 및 구현
 
 ## 에이치아이티
 
