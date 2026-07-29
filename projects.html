@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 프로젝트
-description: Java 오픈소스, 항만 자동화, 크레인 장비 제어, PC·PLC 제어와 머신 비전 프로젝트를 정리합니다.
+description: Java 백엔드, 오픈소스, AI Agent, 항만 자동화와 장비 제어 프로젝트를 정리합니다.
 permalink: /projects/
 ---
 <section class="page-hero shell">
@@ -12,29 +12,23 @@ permalink: /projects/
 
 <section class="shell project-index">
   <div class="project-index-grid">
-    <a class="project-index-card project-index-card-featured" href="{{ '/projects/site-maintenance-agent/' | relative_url }}">
+    <a class="project-index-card project-index-card-featured" href="{{ '/projects/flower/' | relative_url }}">
+      <p class="project-type">2026 - 현재 · 오픈소스</p>
+      <h2>Flower</h2>
+      <p>장시간 작업의 실행·대기·복구를 관리하는 Java 런타임과 19개 규칙의 빌드 검사 도구 flower-check</p>
+      <p class="card-stack">Java · Maven · Spring Boot · JDBC · flower-check</p>
+    </a>
+    <a class="project-index-card" href="{{ '/projects/site-maintenance-agent/' | relative_url }}">
       <p class="project-type">2026 · 핵심 프로젝트 · 현장 검증</p>
       <h2>항만 현장 유지보수 AI 에이전트 서버</h2>
       <p>Slack 요청을 Flower Flow로 실행하고 현장 증거 수집, 통제된 Agent 분석과 보고서 회신을 처리하는 Java 오케스트레이터</p>
       <p class="card-stack">Java 21 · Flower · Action Runtime · AI Harness · Bloom · flower-check</p>
-    </a>
-    <a class="project-index-card" href="{{ '/projects/tls-qms/' | relative_url }}">
-      <p class="project-type">2026 · 설계 및 개발</p>
-      <h2>TLS QMS</h2>
-      <p>TOS의 선박 WorkQueue와 WorkOrder를 관리하고 STS ECS와 작업 명령·상태를 교환하는 Quay Crane 실행 모듈</p>
-      <p class="card-stack">Java · Spring Boot · RabbitMQ · TCP · Oracle · Taskflow</p>
     </a>
     <a class="project-index-card" href="{{ '/projects/netty-socket-library/' | relative_url }}">
       <p class="project-type">2026 · 설계 및 개발</p>
       <h2>Netty 기반 소켓 라이브러리</h2>
       <p>네트워크 I/O와 업무 처리를 분리하고 세션별 Queue를 외부 Task가 처리하는 Java TCP 라이브러리</p>
       <p class="card-stack">Java · Netty · Spring Boot Starter · Agent Skill</p>
-    </a>
-    <a class="project-index-card" href="{{ '/projects/flower/' | relative_url }}">
-      <p class="project-type">2026 - 현재 · 오픈소스</p>
-      <h2>Flower</h2>
-      <p>장시간 작업의 실행·대기·복구를 관리하는 Java 런타임과 19개 규칙의 빌드 검사 도구 flower-check</p>
-      <p class="card-stack">Java · Maven · Spring Boot · JDBC · flower-check</p>
     </a>
     <a class="project-index-card" href="{{ '/projects/flower-agent-skills/' | relative_url }}">
       <p class="project-type">2026 - 현재 · 오픈소스</p>
@@ -65,6 +59,12 @@ permalink: /projects/
       <h2>ArchDox</h2>
       <p>감리 문서·체크리스트, AI 문장 보정, 문서 생성, 법령 지식 갱신과 MCP 연결을 제공하는 건축사사무소용 Workflow Platform</p>
       <p class="card-stack">Java · Spring Boot · Flower · React · AWS</p>
+    </a>
+    <a class="project-index-card" href="{{ '/projects/tls-qms/' | relative_url }}">
+      <p class="project-type">2026 · 설계 및 개발</p>
+      <h2>TLS QMS</h2>
+      <p>TOS의 선박 WorkQueue와 WorkOrder를 관리하고 STS ECS와 작업 명령·상태를 교환하는 Quay Crane 실행 모듈</p>
+      <p class="card-stack">Java · Spring Boot · RabbitMQ · TCP · Oracle · Taskflow</p>
     </a>
     <a class="project-index-card" href="{{ '/projects/aytss/' | relative_url }}">
       <p class="project-type">2025 · 신규 구축</p>
