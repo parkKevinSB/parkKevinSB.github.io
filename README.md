@@ -2,6 +2,12 @@
 
 GitHub Pages로 운영하는 한국어 기술 블로그이자 경력 근거 저장소입니다.
 
+## 수정 기준
+
+사이트의 콘텐츠 방향, 공개 범위, 이미지와 디자인 기준은
+[`docs/site-content-guide.md`](docs/site-content-guide.md)에 정리되어 있습니다.
+에이전트는 작업 전에 루트의 [`AGENTS.md`](AGENTS.md)와 이 가이드를 확인합니다.
+
 ## 새 글 쓰기
 
 1. `_drafts/post-template.md`를 복사합니다.
@@ -12,7 +18,7 @@ GitHub Pages로 운영하는 한국어 기술 블로그이자 경력 근거 저�
 
 글은 다음 여섯 항목을 포함하는 것을 권장합니다.
 
-> 문제 → 책임 → 판단 → 실행 → 결과 → 배움
+> 대상 문제 → 담당 범위 → 적용 구조 → 핵심 동작 → 사용 기술 → 검증 결과
 
 ## 로컬 미리보기
 
@@ -33,3 +39,5 @@ bundle exec jekyll serve
 - `projects.html`: 대표 프로젝트와 역할
 - `about.md`: 이력 요약과 연락 링크
 - `assets/css/style.css`: 전체 디자인
+- `docs/site-content-guide.md`: 콘텐츠·공개·디자인·배포 기준
+- `AGENTS.md`: 에이전트용 필수 규칙
