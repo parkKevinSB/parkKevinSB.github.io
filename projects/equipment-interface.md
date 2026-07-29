@@ -1,10 +1,10 @@
 ---
-title: 측정·검사 장비 연동
-description: 두께 측정기 CIM 연동, MQTT 장비 제어 검증과 OLED Mask 장비 개조·셋업을 수행했습니다.
+title: 두께 측정기 CIM 연동 및 MQTT 검증
+description: OLED 두께 측정기 제어 프로그램의 CIM 통신 연동과 MQTT 장비 제어 검증을 수행했습니다.
 permalink: /projects/equipment-interface/
-period: 2022.03 - 2022.12
-category: 생산 장비 연동 및 현장 셋업
-role: 기존 프로그램 개조, 통신 연동, 검증 및 셋업
+period: 2022.03 - 2022.07
+category: 생산 장비 통신 연동 및 검증
+role: 기존 프로그램 개조, CIM 통신 연동 및 MQTT 검증
 stack: C#, WinForms, Socket, RS-232/485, CIM, MQTT, Node-RED
 ---
 
@@ -32,11 +32,3 @@ stack: C#, WinForms, Socket, RS-232/485, CIM, MQTT, Node-RED
   <img src="{{ '/assets/images/projects/mqtt-test.png' | relative_url }}" alt="MQTT 장비 제어 검증 보드">
   <figcaption>MQTT 통신 시험용 보드와 검증 구성</figcaption>
 </figure>
-
-## OLED Mask 장비
-
-- Mask Frame 인식기 확장
-- 장비 I/O 및 Serial 통신
-- ACS Gantry 제어
-- Review·Align Camera Teaching
-- 기존 프로그램 개조 및 현장 셋업

@@ -571,6 +571,12 @@ img {
   font-size: 0.8rem;
 }
 
+.evidence-figure-compact {
+  max-width: 760px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .image-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

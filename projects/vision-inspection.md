@@ -2,10 +2,10 @@
 title: 비전 정렬 및 검사 프로그램
 description: 카메라 영상으로 위치와 각도를 계산하고 생산 레시피, 결과 데이터, 이미지와 알람 이력을 관리하는 프로그램입니다.
 permalink: /projects/vision-inspection/
-period: 2020.07 - 2022.12
+period: 2020.07 - 2021.03
 category: 머신 비전 및 장비 제어
-role: 응용 프로그램 개발, 기존 장비 개조 및 셋업
-stack: C#, WPF, WinForms, GigE Camera, SQLite, Socket, Serial, ADS
+role: 비전 정렬 응용 프로그램 개발 및 셋업
+stack: C#, WPF, GigE Camera, SQL, Socket, Serial
 ---
 
 ## 비전 정렬 프로그램
@@ -38,17 +38,3 @@ stack: C#, WPF, WinForms, GigE Camera, SQLite, Socket, Serial, ADS
 | Image | 작업별 촬영 이미지 |
 | Alarm | 장비 및 검사 오류 이력 |
 | Log | 통신과 작업 진행 기록 |
-
-## 검사 장비 개조
-
-OLED Mask 이장기와 검사기의 기존 C# WinForms 프로그램을 개조하고 현장 셋업을 수행했습니다.
-
-- 1EA Mask Frame 인식기를 4EA 구성으로 변경
-- BNR I/O와 Serial 통신
-- ACS Gantry 제어 및 Teaching
-- Review·Align Camera Teaching
-
-<figure class="evidence-figure">
-  <img src="{{ '/assets/images/projects/mask-inspection.png' | relative_url }}" alt="OLED Mask 이장기 및 검사기 화면">
-  <figcaption>OLED Mask 이장기 및 검사기 운영 화면</figcaption>
-</figure>
