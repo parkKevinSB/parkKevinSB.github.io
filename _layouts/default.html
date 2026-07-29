@@ -8,6 +8,9 @@
     {% assign page_description = page.description | default: site.description %}
     <title>{% if page.title %}{{ page.title }} · KevinPark{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{{ page_description | strip_html | normalize_whitespace | escape }}">
+    {% unless site.search_indexing %}
+    <meta name="robots" content="noindex, nofollow">
+    {% endunless %}
     <link rel="canonical" href="{{ page.url | absolute_url }}">
 
     <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">

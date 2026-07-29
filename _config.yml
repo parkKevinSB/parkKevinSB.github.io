@@ -9,6 +9,7 @@ markdown: kramdown
 highlighter: rouge
 future: false
 excerpt_separator: "<!--more-->"
+search_indexing: false
 
 author:
   name: KevinPark
