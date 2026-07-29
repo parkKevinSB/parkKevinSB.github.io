@@ -67,40 +67,174 @@ AI가 임의로 현장 시스템을 조작하는 구조가 아닙니다. Java �
   </div>
 </div>
 
-## 처리 흐름
+## 대화형 장애 조사 흐름
 
-<div class="process-grid" aria-label="항만 현장 장애 조사 처리 순서">
-  <article>
-    <span>01</span>
-    <h3>요청 접수</h3>
-    <p>Slack 요청 또는 등록된 일정으로 유지보수 작업을 시작합니다.</p>
-  </article>
-  <article>
-    <span>02</span>
-    <h3>조사 범위 확인</h3>
-    <p>대상 현장과 시간 범위를 확인하고 정보가 부족하면 추가 질문을 보냅니다.</p>
-  </article>
-  <article>
-    <span>03</span>
-    <h3>현장 자료 준비</h3>
-    <p>허용된 범위에서 로그, 등록 DB 조회 결과, 소스와 운영 지식을 준비합니다.</p>
-  </article>
-  <article>
-    <span>04</span>
-    <h3>AI 분석</h3>
-    <p>준비된 자료를 분석하고 원인 후보와 확인 근거를 정해진 형식으로 반환합니다.</p>
-  </article>
-  <article>
-    <span>05</span>
-    <h3>결과 검증</h3>
-    <p>분석 결과가 실제 수집 자료를 근거로 작성됐는지 Java 서버에서 확인합니다.</p>
-  </article>
-  <article>
-    <span>06</span>
-    <h3>보고</h3>
-    <p>조사 결과를 보고서로 저장하고 요청이 시작된 Slack Thread에 회신합니다.</p>
-  </article>
+Slack에서 시작한 장애 조사는 대화 처리와 실제 조사를 별도 Flow로 실행합니다. 대상 현장, 조사 시간과 요청 목적이 확인되기 전에는 VPN이나 현장 자료 수집을 시작하지 않습니다.
+
+<div class="incident-flow" aria-label="Slack 대화부터 현장 자료 수집, AI 분석, 보고까지의 장애 조사 흐름">
+  <section class="incident-phase">
+    <header>
+      <span>1</span>
+      <div>
+        <strong>요청 접수와 정보 확인</strong>
+        <small>Slack Conversation Flow</small>
+      </div>
+    </header>
+    <div class="incident-steps incident-steps-4">
+      <article>
+        <b>01</b>
+        <h3>대화 시작</h3>
+        <p>Slack 요청을 중복 없이 저장한 뒤 짧게 응답하고, 별도의 대화 처리 Flow를 시작합니다.</p>
+      </article>
+      <article>
+        <b>02</b>
+        <h3>AI 요청 이해</h3>
+        <p>대화 이해 Agent가 최근 대화와 현재 메시지에서 대상 현장, 시간 범위와 조사 목적을 구조화합니다.</p>
+      </article>
+      <article>
+        <b>03</b>
+        <h3>부족한 정보 질문</h3>
+        <p>현장이나 시간이 빠졌으면 같은 Thread에서 질문하고, 답변이 오면 저장된 문맥과 합쳐 다시 확인합니다.</p>
+      </article>
+      <article>
+        <b>04</b>
+        <h3>조사 시작</h3>
+        <p>필수 정보가 갖춰지면 조사 ID와 허용 범위를 저장하고 Incident Flow를 제출합니다.</p>
+      </article>
+    </div>
+    <div class="incident-loop-note">
+      <span>정보 부족</span>
+      <strong>추가 질문 → 사용자 답변 → 요청 내용 재확인</strong>
+    </div>
+  </section>
+
+  <div class="incident-phase-connector"><span>대상 · 시간 · 목적 확정</span></div>
+
+  <section class="incident-phase incident-phase-evidence">
+    <header>
+      <span>2</span>
+      <div>
+        <strong>현장 연결과 기준 증거 준비</strong>
+        <small>Incident Baseline</small>
+      </div>
+    </header>
+    <div class="incident-steps incident-steps-4">
+      <article>
+        <b>05</b>
+        <h3>조사 계획 검증</h3>
+        <p>계획 Agent의 결과를 Java 서버가 등록된 로그, 소스와 조회 항목에 대조하고 허용 범위 안으로 고정합니다.</p>
+      </article>
+      <article>
+        <b>06</b>
+        <h3>VPN 연결</h3>
+        <p>Java 서버가 현장별 연결 설정과 공용 Lease를 확인한 뒤 등록된 VPN 연결을 실행합니다.</p>
+      </article>
+      <article>
+        <b>07</b>
+        <h3>기준 자료 수집</h3>
+        <p>FTP 읽기 전용 수집으로 요청 시간대 로그를 확보하고, 배포 소스와 운영 지식 Snapshot을 준비합니다.</p>
+      </article>
+      <article>
+        <b>08</b>
+        <h3>분석 자료 구성</h3>
+        <p>원본은 별도로 보존하고, 민감 정보 제거와 출처 연결이 끝난 자료만 분석 Workspace에 배치합니다.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="incident-phase-connector"><span>검증된 Evidence Workspace</span></div>
+
+  <section class="incident-phase incident-phase-agent">
+    <header>
+      <span>3</span>
+      <div>
+        <strong>AI 분석과 추가 증거 반복</strong>
+        <small>Java Orchestrator · AI Harness · Node Agent Runner</small>
+      </div>
+    </header>
+    <div class="runner-pipeline" aria-label="Java 서버에서 Claude 또는 Codex SDK까지의 Agent 실행 계층">
+      <span>Flower Step</span>
+      <span>agent.run</span>
+      <span>AI Harness</span>
+      <span>Node Agent Runner</span>
+      <span>Claude Agent SDK<br>또는 Codex SDK</span>
+    </div>
+    <div class="incident-steps incident-steps-3">
+      <article>
+        <b>09</b>
+        <h3>분석 실행</h3>
+        <p>Java 서버가 실행 요청을 제한된 Queue에 등록하고, 분석 회차마다 Node Runner 프로세스 하나를 시작합니다.</p>
+      </article>
+      <article>
+        <b>10</b>
+        <h3>격리된 자료 분석</h3>
+        <p>설정에 따라 Claude 또는 Codex가 실행됩니다. Agent는 네트워크 없이 읽기 전용 Workspace만 확인합니다.</p>
+      </article>
+      <article>
+        <b>11</b>
+        <h3>결과 검증</h3>
+        <p>Java 서버가 결과 형식과 인용된 파일·구간을 실제 Evidence와 대조해 근거가 없는 결론을 차단합니다.</p>
+      </article>
+    </div>
+    <div class="evidence-loop" aria-label="AI 추가 증거 요청 처리 순서">
+      <div>
+        <span>추가 확인 필요</span>
+        <strong>AI Evidence Request</strong>
+        <small>필요한 로그·등록 조회·소스 범위만 제안</small>
+      </div>
+      <i>→</i>
+      <div>
+        <span>Java 검증</span>
+        <strong>범위 · 권한 · 한도 확인</strong>
+        <small>허용 범위 초과 시 승인 대기</small>
+      </div>
+      <i>→</i>
+      <div>
+        <span>등록 Action 실행</span>
+        <strong>FTP · DB 조회 · Source</strong>
+        <small>새 Evidence를 Workspace에 추가</small>
+      </div>
+      <i>↺</i>
+      <div>
+        <span>다음 회차</span>
+        <strong>새 Agent Run</strong>
+        <small>추가 자료를 포함해 다시 분석</small>
+      </div>
+    </div>
+    <p class="incident-boundary-note">AI는 VPN 명령, FTP 경로, DB 접속 정보나 SQL을 직접 실행하지 않습니다. 필요한 자료를 논리적인 요청으로 반환하고, 실제 외부 작업은 Java 서버가 등록된 Action으로 처리합니다.</p>
+  </section>
+
+  <div class="incident-phase-connector"><span>근거 검증 완료</span></div>
+
+  <section class="incident-phase incident-phase-finish">
+    <header>
+      <span>4</span>
+      <div>
+        <strong>보고와 연결 정리</strong>
+        <small>Report · Cleanup · Slack Reply</small>
+      </div>
+    </header>
+    <div class="incident-steps incident-steps-3">
+      <article>
+        <b>12</b>
+        <h3>보고서 생성</h3>
+        <p>검증된 결과와 근거를 이용해 Java 서버가 HTML·JSON 조사 보고서를 생성합니다.</p>
+      </article>
+      <article>
+        <b>13</b>
+        <h3>VPN 연결 해제</h3>
+        <p>조사가 사용한 Lease를 반납하고 필요한 경우 VPN을 해제합니다. 실패나 취소 시에도 정리 경로를 실행합니다.</p>
+      </article>
+      <article>
+        <b>14</b>
+        <h3>결과 회신</h3>
+        <p>요청이 시작된 Slack Thread에 결과 요약과 보고서 정보를 보내고 실행 이력과 분석 기록을 보관합니다.</p>
+      </article>
+    </div>
+  </section>
 </div>
+
+정기 점검은 Slack 대화 대신 등록된 일정에서 시작하지만, `VPN 연결 → 로그 증분 수집 → 분석 자료 구성 → Agent 분석 → 보고 → 연결 정리`의 동일한 실행 경계를 사용합니다.
 
 ## Flower의 역할
 
