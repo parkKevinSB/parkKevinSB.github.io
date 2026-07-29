@@ -52,7 +52,7 @@ permalink: /about/
 - 업무 Action의 정책·승인·감사를 통제하는 [Flower Action Runtime](https://github.com/flowerjvm/flower-action-runtime)
 - AI 코딩 에이전트용 [Flower App Guide](https://github.com/flowerjvm/flower-agent-skills)와 [Flower Action Runtime Guide](https://github.com/flowerjvm/flower-action-runtime-guide)
 - JVM 내부 Typed Event Bus [Bloom](https://github.com/flowerjvm/bloom)
-- 건축사사무소 문서 Workflow Platform [ArchDox](https://github.com/parkKevinSB/archdox)
+- 감리 문서·AI 검토·문서 생성·법령 갱신·MCP 연결을 제공하는 건축사사무소용 Platform [ArchDox]({{ '/projects/archdox/' | relative_url }})
 - Maven Central 배포, GitHub Actions CI, 테스트와 공개 문서 관리
 
 ## 기술 경험
