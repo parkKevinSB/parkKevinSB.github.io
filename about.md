@@ -30,6 +30,7 @@ permalink: /about/
 - 독자 개발한 `eventflow` 실행 프레임워크를 AYTSS에 최초 적용
 - TLS [QMS]({{ '/projects/tls-qms/' | relative_url }}) Java 서버 설계·개발과 STS ECS 연동
 - 선박 WorkQueue·WorkOrder 상태 관리, Single/Dual Trolley Scheduling과 작업 진행 보고 처리
+- Netty 기반 [LI Net Socket]({{ '/projects/li-net-socket/' | relative_url }}) 구조 설계와 Spring Boot Starter·Agent Skill 개발
 - ECS·STS 장비 에뮬레이터와 연동 검증 도구 설계 및 구현
 
 ## 에이치아이티
