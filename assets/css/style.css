@@ -647,6 +647,11 @@ img {
   background: #f0f8f8;
 }
 
+.architecture-primary {
+  border-color: #9cbccc;
+  background: #f1f7fa;
+}
+
 .diagram-label {
   margin: 0 0 11px !important;
   color: var(--blue) !important;
@@ -673,6 +678,11 @@ img {
   padding: 13px 14px;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.88);
+}
+
+.architecture-items > .diagram-focus {
+  border-color: #8fb3c8;
+  background: #edf5f9;
 }
 
 .architecture-items strong,

@@ -46,6 +46,16 @@ STS는 선박과 육상 사이의 컨테이너 하역 작업을 검증하기 위
   <figcaption>STS 에뮬레이터 — 복수 안벽 크레인의 상태, 선박 Bay 배치, 크레인 측면·상면 위치와 수동 이동 제어 화면</figcaption>
 </figure>
 
+### TLS QMS 연동 검증
+
+STS 에뮬레이터는 [TLS QMS]({{ '/projects/tls-qms/' | relative_url }})가 실제 크레인 없이 다음 경로를 확인할 수 있도록 사용했습니다.
+
+- 선박 Visit·Geometry·Inventory 요청과 응답
+- WorkQueue를 전달하고 STS ECS가 CraneOrder를 만드는 방식
+- QMS가 MAIN·PORTAL Trolley별 Order를 만드는 방식
+- Single/Dual Trolley 작업과 Platform 인계
+- 작업 진행·대기·위치 보고와 연결 단절·재접속
+
 ## 공통 구조
 
 | 영역 | 구현 내용 |
