@@ -23,7 +23,7 @@ Bosch Rexroth LMS Stage를 이용하는 물류 장비의 C# 제어 프로그램�
 
 <figure class="evidence-figure evidence-figure-compact">
   <img src="{{ '/assets/images/projects/lms-control.png' | relative_url }}" alt="LMS 물류 제어 프로그램 화면">
-  <figcaption>Bosch Rexroth LMS 물류 제어 프로그램 화면 — 공개용으로 원본 해상도를 축소했습니다.</figcaption>
+  <figcaption>Bosch Rexroth LMS 물류 제어 프로그램 화면</figcaption>
 </figure>
 
 ## 통신 구성

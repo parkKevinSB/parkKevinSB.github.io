@@ -37,7 +37,7 @@ LMS Stage는 Bosch Rexroth 장비입니다. 기존 Rexroth LMS 통신 인터페�
 
 <figure class="evidence-figure evidence-figure-compact">
   <img src="{{ '/assets/images/projects/beckhoff-lms.png' | relative_url }}" alt="Beckhoff PLC와 Bosch Rexroth LMS 데모 장비">
-  <figcaption>Beckhoff PLC용 LMS 제어 라이브러리와 데모 장비 — 공개용으로 원본 해상도를 축소했습니다.</figcaption>
+  <figcaption>Beckhoff PLC용 LMS 제어 라이브러리와 데모 장비</figcaption>
 </figure>
 
 ## 관련 프로젝트

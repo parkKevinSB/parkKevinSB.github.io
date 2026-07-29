@@ -32,7 +32,7 @@ OLED 공정에서 사용하는 Mask Frame 인장기 1대와 검사기 4대의 �
 
 <figure class="evidence-figure evidence-figure-compact">
   <img src="{{ '/assets/images/projects/mask-inspection.png' | relative_url }}" alt="OLED Mask 인장기 및 검사기 개조 포트폴리오 화면">
-  <figcaption>OLED Mask 인장기 및 검사기 프로그램 화면 — 공개용으로 원본 해상도를 축소했습니다.</figcaption>
+  <figcaption>OLED Mask 인장기 및 검사기 프로그램 화면</figcaption>
 </figure>
 
 <p class="scope-note">공개 페이지에는 포트폴리오에 정리된 담당 범위만 표시했으며, 고객사·설비 식별 정보와 상세 제어 조건은 포함하지 않았습니다.</p>
