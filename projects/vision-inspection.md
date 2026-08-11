@@ -41,10 +41,8 @@ stack: C#, .NET Framework, WPF, SQLite, FLIR Camera, GigE Vision, Mitsubishi PLC
 | 영상 인터페이스 | Gigabit Ethernet 기반 GigE Vision |
 | 하위 Stage 제어 | Mitsubishi PLC |
 | PC·PLC 통신 | MX Component의 .NET 통신 Control 사용 |
-| 데이터 교환 | 양쪽에서 약속한 PLC 디바이스 영역을 통해 보정값과 실행 상태 전달 |
+| 데이터 교환 | PLC 디바이스 영역을 통해 보정값과 실행 상태 전달 |
 | 기타 장비 인터페이스 | 장비 구성에 따른 Socket·Serial 통신 |
-
-MX Component가 C# 프로그램과 PLC에 하나의 공유 메모리를 만드는 방식은 아닙니다. C# 프로그램이 MX Component를 통해 PLC의 지정된 디바이스 값을 읽고 쓰며, 해당 영역을 보정값과 제어 상태를 교환하는 인터페이스로 사용했습니다.
 
 <div class="image-grid">
   <figure class="evidence-figure">
