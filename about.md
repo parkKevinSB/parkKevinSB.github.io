@@ -62,10 +62,9 @@ permalink: /about/
 | 구분 | 기술 |
 |---|---|
 | 백엔드 | Java, Spring Boot, Spring Framework, eGovFrame, MyBatis, Spring JDBC |
-| 오픈소스·프레임워크 | Flower, Bloom, AI Harness, Action Runtime, Maven Central, JUnit 5 |
-| 개발 도구 | flower-check, JavaParser, SARIF, Agent Skills, Maven·Gradle Plugin |
-| AI 연동 | Spring AI, OpenAI Java SDK, Anthropic Java SDK, Structured Output 검증 |
-| 프론트엔드 | React, TypeScript, Vite, React Query |
+| 오픈소스 개발 | Flower, Bloom, Flower AI Harness, Flower Action Runtime, Maven Central 배포 |
+| 빌드·테스트 | Maven, Gradle, JUnit 5, GitHub Actions |
+| AI API 연동 | OpenAI Java SDK, Anthropic Java SDK |
 | PC·장비 제어 | C#, .NET Framework, WinForms, WPF |
 | 데이터베이스 | Oracle, MSSQL, MySQL, SQLite |
 | PLC·산업 통신 | Beckhoff ST, TwinCAT ADS, CC-Link, RS-232/485 |
