@@ -4,13 +4,15 @@ description: Slack에서 접수한 항만 현장 장애 조사 요청을 정해�
 permalink: /projects/site-maintenance-agent/
 period: 2026 · 설계 및 개발
 category: 항만 현장 유지보수 자동화 · Java AI Orchestrator
-role: Java 서버와 유지보수 Flow 설계·개발, Flower 기반 실행 관리, 현장 연동 및 검증
-stack: Java 21 · Spring Boot · Flower · Flower Action Runtime · Flower AI Harness · Bloom · flower-check
+role: Java 서버와 유지보수 Flow·AI Agent 실행 계층 설계·개발, 현장 연동 및 검증
+stack: Java 21 · Spring Boot · Flower · Flower Action Runtime · Flower AI Harness · Codex SDK · Claude Agent SDK
 ---
 
 ## 프로젝트 개요
 
 항만 운영 시스템의 정기 점검과 장애 조사를 지원하기 위해 구축한 로컬 Java 서버입니다. Slack에서 조사 요청을 받거나 정해진 일정에 따라 작업을 시작하고, 현장 로그·등록된 DB 조회 결과·배포 소스와 운영 지식을 모아 AI 분석 결과와 보고서를 제공합니다.
+
+별도 Agent Runner에서 Codex SDK와 Claude Agent SDK를 실행하고, Flower AI Harness가 Agent 작업의 제출·상태 확인·결과 검증을 관리하도록 구성했습니다. 외부 작업은 Flower Action Runtime을 통해 허용 범위와 승인 여부를 통제합니다.
 
 AI가 임의로 현장 시스템을 조작하는 구조가 아닙니다. Java 서버가 조사 순서와 실행 범위를 관리하고, AI는 서버가 준비한 자료를 분석하는 역할을 담당합니다.
 

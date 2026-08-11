@@ -47,7 +47,7 @@ permalink: /about/
 
 ## 개인·오픈소스 개발
 
-- Flower를 기반으로 Slack 요청, 현장 로그·등록 DB 조회·소스 분석과 보고를 연결한 [항만 현장 유지보수 AI 에이전트 서버]({{ '/projects/site-maintenance-agent/' | relative_url }})
+- Codex SDK와 Claude Agent SDK를 Flower AI Harness와 Agent Runner에 연결하고, Slack 요청부터 현장 자료 수집·분석·보고까지 실행하도록 구축한 [항만 현장 유지보수 AI 에이전트 서버]({{ '/projects/site-maintenance-agent/' | relative_url }})
 - Java 단일 JVM 오케스트레이션 런타임 [Flower](https://github.com/flowerjvm/flower)
 - Java 소스의 잘못된 Flower 사용을 19개 규칙으로 검사하는 `flower-check`
 - AI 호출의 검증·재시도 수명주기를 관리하는 [Flower AI Harness](https://github.com/flowerjvm/flower-ai-harness)
@@ -64,7 +64,7 @@ permalink: /about/
 | 백엔드 | Java, Spring Boot, Spring Framework, eGovFrame, MyBatis, Spring JDBC |
 | 오픈소스 개발 | Flower, Bloom, Flower AI Harness, Flower Action Runtime, Maven Central 배포 |
 | 빌드·테스트 | Maven, Gradle, JUnit 5, GitHub Actions |
-| AI API 연동 | OpenAI Java SDK, Anthropic Java SDK |
+| AI 에이전트 연동 | Codex SDK, Claude Agent SDK |
 | PC·장비 제어 | C#, .NET Framework, WinForms, WPF |
 | 데이터베이스 | Oracle, MSSQL, MySQL, SQLite |
 | PLC·산업 통신 | Beckhoff ST, TwinCAT ADS, CC-Link, RS-232/485 |
