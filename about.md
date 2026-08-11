@@ -38,7 +38,7 @@ permalink: /about/
 ## 에이치아이티
 
 - Bosch Rexroth LMS 물류 제어 프로그램 개발 및 약 35대 장비 개조·셋업
-- FLIR 카메라 영상 기반 [비전 정렬·검사 프로그램]({{ '/projects/vision-inspection/' | relative_url }})과 SQLite 데이터 관리, Mitsubishi PLC Stage 연동 개발
+- FLIR 카메라 영상 기반 [비전 정렬·검사 프로그램]({{ '/projects/vision-inspection/' | relative_url }})과 SQLite 데이터 관리, Mitsubishi PLC Stage 연동·GX Works 시뮬레이터 검증
 - Bosch Rexroth LMS를 Beckhoff PLC에서 제어하는 [통신 라이브러리와 데모 장비 프로그램]({{ '/projects/beckhoff-lms-library/' | relative_url }}) 개발
 - TwinCAT ADS 기반 장비 상태 로거와 파라미터 파일 관리자 개발
 - OLED 두께 측정기 CIM 통신 연동
@@ -67,7 +67,7 @@ permalink: /about/
 | AI 에이전트 연동 | Codex SDK, Claude Agent SDK |
 | PC·장비 제어 | C#, .NET Framework, WinForms, WPF |
 | 데이터베이스 | Oracle, MSSQL, MySQL, SQLite |
-| PLC·산업 통신 | Beckhoff ST, TwinCAT ADS, Mitsubishi PLC, MX Component, CC-Link, RS-232/485 |
+| PLC·산업 통신 | Beckhoff ST, TwinCAT ADS, Mitsubishi PLC, MX Component, GX Works, CC-Link, RS-232/485 |
 | 네트워크 | TCP Socket, 비동기 통신, MQTT |
 | 머신 비전 | FLIR Camera, GigE Vision, 영상 정렬 및 검사, 레시피·결과 관리 |
 | 설계 | 작업 시퀀스, 이벤트 기반 처리, 상태 관리, 스케줄링, 재시도·복구 |

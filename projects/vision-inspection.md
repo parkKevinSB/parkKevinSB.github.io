@@ -4,13 +4,13 @@ description: FLIR 산업용 카메라 영상으로 위치와 각도를 계산하
 permalink: /projects/vision-inspection/
 period: 2020.07 - 2021.03
 category: 머신 비전 및 장비 제어
-role: 비전 정렬·검사 응용 프로그램 개발 및 장비 셋업
-stack: C#, .NET Framework, WPF, SQLite, FLIR Camera, GigE Vision, Mitsubishi PLC, MX Component
+role: 비전 정렬·검사 응용 프로그램 개발, PLC Stage 연동 검증 및 장비 셋업
+stack: C#, .NET Framework, WPF, SQLite, FLIR Camera, GigE Vision, Mitsubishi PLC, MX Component, GX Works
 ---
 
 ## 프로젝트 개요
 
-생산 대상의 위치와 각도를 카메라 영상으로 계산하고, 보정값을 하위 Stage에 전달하는 C# 기반 머신 비전 프로그램입니다. FLIR 산업용 카메라의 영상을 GigE Vision 인터페이스로 취득했으며, 하위 Stage는 Mitsubishi PLC가 제어했습니다.
+생산 대상의 위치와 각도를 카메라 영상으로 계산하고, 보정값을 하위 Stage에 전달하는 C# 기반 머신 비전 프로그램입니다. FLIR 산업용 카메라의 영상을 GigE Vision 인터페이스로 취득했으며, 하위 Stage는 Mitsubishi PLC가 제어했습니다. GX Works에서 검증용 PLC 로직을 작성하고 시뮬레이터를 실행해 Stage 명령과 보정 제어를 시험했습니다.
 
 제품별 촬영·정렬·검사 조건은 Recipe로 관리하고, 정렬 결과와 측정값, 알람 이력은 SQLite 기반 로컬 데이터베이스에 저장했습니다. 촬영 이미지와 작업 로그를 함께 남겨 생산 결과를 다시 확인할 수 있도록 구성했습니다.
 
@@ -20,6 +20,7 @@ stack: C#, .NET Framework, WPF, SQLite, FLIR Camera, GigE Vision, Mitsubishi PLC
 - FLIR 카메라 영상 취득과 정렬 알고리즘 적용
 - 대상 물체의 위치·각도 계산과 Stage 보정값 산출
 - Mitsubishi PLC가 제어하는 하위 Stage 연동
+- GX Works 기반 검증용 PLC 로직 작성과 Stage 명령·보정 제어 시험
 - SQLite 기반 Recipe·결과·알람 이력 관리
 - 촬영 이미지와 통신·작업 로그 저장 및 조회
 - 장비 연동 시험과 현장 셋업
@@ -31,7 +32,8 @@ stack: C#, .NET Framework, WPF, SQLite, FLIR Camera, GigE Vision, Mitsubishi PLC
 3. 영상에서 대상 물체의 위치와 각도를 계산하고 기준값과 비교합니다.
 4. 계산 결과를 하위 Stage 좌표계의 보정값으로 변환합니다.
 5. MX Component를 통해 Mitsubishi PLC의 지정된 디바이스 영역에 보정값과 실행 상태를 전달합니다.
-6. 정렬 결과, 측정값과 판정 결과를 SQLite에 저장하고 촬영 이미지·알람·작업 로그를 연결합니다.
+6. GX Works 시뮬레이터의 검증용 PLC 로직으로 Stage 명령, 보정값과 상태 응답을 확인합니다.
+7. 정렬 결과, 측정값과 판정 결과를 SQLite에 저장하고 촬영 이미지·알람·작업 로그를 연결합니다.
 
 ## 카메라와 PLC 연동
 
@@ -42,6 +44,7 @@ stack: C#, .NET Framework, WPF, SQLite, FLIR Camera, GigE Vision, Mitsubishi PLC
 | 하위 Stage 제어 | Mitsubishi PLC |
 | PC·PLC 통신 | MX Component의 .NET 통신 Control 사용 |
 | 데이터 교환 | PLC 디바이스 영역을 통해 보정값과 실행 상태 전달 |
+| 연동 검증 | GX Works에서 작성한 검증용 PLC 로직과 시뮬레이터 사용 |
 | 기타 장비 인터페이스 | 장비 구성에 따른 Socket·Serial 통신 |
 
 <div class="image-grid">
